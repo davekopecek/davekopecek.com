@@ -17,7 +17,7 @@ This is my personal blog. It was created using [Minimal Mistakes](http://mmistak
 To start Jekyll from my projects directory
 
     C:\>cd Users\Dave\Projects\davekopecek\site
-    bundle exec jekyll server
+    C:\Users\Dave\Projects\davekopecek\site>bundle exec jekyll server
 
 ## Getting Jekyll and Minimal Mistakes to Run on Windows.
 
