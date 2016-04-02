@@ -1,6 +1,6 @@
 ## davekopecek.com
 
-This is my personal blog. It was created using [Minimal Mistakes](http://mmistakes.github.io/minimal-mistakes), a two column responsive Jekyll theme. I maintain and deploy this blog from a Windows 10 system. I'm not a "ruby guy" so things that may be obvious to other were certainly not to me. Here's some info about my current system:
+My personal blog. I hesitate to say "fork me", but do what you have to do. It was created using [Minimal Mistakes](http://mmistakes.github.io/minimal-mistakes), a two column responsive Jekyll theme. I maintain and deploy this blog from a Windows 10 system. I'm not a "ruby guy" so things that may be obvious to other were certainly not to me. Here's some info about my current system:
 
     C:\>ruby -v
     ruby 2.0.0p645 (2015-04-13) [x64-mingw32]
