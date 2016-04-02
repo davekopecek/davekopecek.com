@@ -1,8 +1,11 @@
 # davekopecek.com
 
-** This is my personal blog. It was created using [Minimal Mistakes](http://mmistakes.github.io/minimal-mistakes)** , a two column responsive Jekyll theme.
+** This is my personal blog.
+
+It was created using [Minimal Mistakes](http://mmistakes.github.io/minimal-mistakes)** , a two column responsive Jekyll theme.
 
 I maintain and deploy this blog from a Windows 10 system. I'm not a "ruby guy" so things that may be obvious to other were certainly not to me. Here's some info about my current system:
+
 
 <pre>
 C:\>ruby -v
@@ -19,6 +22,8 @@ Bundler version 1.11.2
 </pre>
 
 To start Jekyll from my projects directory
+
+
 <pre>
 C:\>cd Users\Dave\Projects\davekopecek\site
 bundle exec jekyll server
