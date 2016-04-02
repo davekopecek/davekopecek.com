@@ -1,6 +1,6 @@
 ## davekopecek.com
 
-My personal blog. I hesitate to say "fork me", but do what you have to do. It was created using [Minimal Mistakes](http://mmistakes.github.io/minimal-mistakes), a two column responsive Jekyll theme. I maintain and deploy this blog from a Windows 10 system. I'm not a "ruby guy" so things that may be obvious to other were certainly not to me. Here's some info about my current system:
+My personal blog. It was created using [Minimal Mistakes](http://mmistakes.github.io/minimal-mistakes), a two column responsive Jekyll theme. I maintain and deploy this blog from a Windows 10 system. I'm not a "ruby guy" so things that may be obvious to other were certainly not to me. Here's some info about my current system:
 
     C:\>ruby -v
     ruby 2.0.0p645 (2015-04-13) [x64-mingw32]
@@ -16,12 +16,28 @@ My personal blog. I hesitate to say "fork me", but do what you have to do. It wa
 
 To start Jekyll from my projects directory
 
-    C:\>cd Users\Dave\Projects\davekopecek\site
+    C:\>cd C:\Users\Dave\Projects\davekopecek\site
     C:\Users\Dave\Projects\davekopecek\site>bundle exec jekyll server
 
 ## Getting Jekyll and Minimal Mistakes to Run on Windows.
 
 This took a bit of doing. Your mileage may vary.
+
+### Getting rid of the CRAZY SSL Error
+
+This has to do with your gem version. Apparently there were a few versions that were released with incorrect or missing cacert.pem files. This fix worked for me:
+
+
+
+Many Thanks to xxx for this solution. His post is here.
+
+
+There are a lot of other suggestionssuggestions out there. These include:
+
+### Getting rid of the wdm Gemfile error on startup
+
+**Add wdm with `gem install wdm`
+**Follow the instructions in the startup error message and add `gem 'wdm', '>= 0.1.0' if Gem.win_platform?` to /Gemfile
 
 
 
