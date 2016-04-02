@@ -1,31 +1,23 @@
 ## davekopecek.com
 
-This is my personal blog. It was created using [Minimal Mistakes](http://mmistakes.github.io/minimal-mistakes)** , a two column responsive Jekyll theme.
+This is my personal blog. It was created using [Minimal Mistakes](http://mmistakes.github.io/minimal-mistakes), a two column responsive Jekyll theme. I maintain and deploy this blog from a Windows 10 system. I'm not a "ruby guy" so things that may be obvious to other were certainly not to me. Here's some info about my current system:
 
-I maintain and deploy this blog from a Windows 10 system. I'm not a "ruby guy" so things that may be obvious to other were certainly not to me. Here's some info about my current system:
+    C:\>ruby -v
+    ruby 2.0.0p645 (2015-04-13) [x64-mingw32]
+    
+    C:\>gem -v
+    2.0.14
 
+    C:\>jekyll -v
+    jekyll 3.1.2
 
-<pre>
-C:\>ruby -v
-ruby 2.0.0p645 (2015-04-13) [x64-mingw32]
-
-C:\>gem -v
-2.0.14
-
-C:\>jekyll -v
-jekyll 3.1.2
-
-C:\>bundle -v
-Bundler version 1.11.2
-</pre>
+    C:\>bundle -v
+    Bundler version 1.11.2
 
 To start Jekyll from my projects directory
 
-
-<pre>
-C:\>cd Users\Dave\Projects\davekopecek\site
-bundle exec jekyll server
-</pre>
+    C:\>cd Users\Dave\Projects\davekopecek\site
+    bundle exec jekyll server
 
 ## Getting Jekyll and Minimal Mistakes to Run on Windows.
 
