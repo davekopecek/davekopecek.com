@@ -1,0 +1,11 @@
+# Site navigation links
+
+- title: About
+  url: /about/
+
+- title: Posts
+  url: /posts/
+
+- title: Aisle8
+  url: http://aisle8.net
+  external: true

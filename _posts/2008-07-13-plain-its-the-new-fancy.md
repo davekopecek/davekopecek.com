@@ -1,0 +1,24 @@
+---
+layout: post
+title: "Plain. It's the New Fancy"
+description: "And it's just like Grandma used to make."
+category: articles
+tags: [simplicity, yummy]
+---
+
+<figure class="half">
+<a href="/images/pepper.jpg"><img src="/images/pepper.jpg" alt="POP (Plain Old Pepper)" title="pepper" width="250" height="253" class="alignleft size-full wp-image-40" /></a>
+  <figcaption>POP (Plain Old Pepper)</figcaption>
+</figure>
+
+For as long as I can remember I&#39;ve spent most of my days solving problems I didn&#39;t know I had when I woke up in the morning.  I&#39;ve also liked pepper.  On Monday, a casual mention of &quot;<a href="http://www.ubuntu.com/" target="_blank" title="ubuntu linux home">Ubuntu Linux</a> &quot;  in a magazine sent me off downloading software to burn ISO images (<a href="http://www.cdburnerxp.se/download.php" target="_blank" title="CDBurner XP Pro ">CDBurnerXP Pro</a> ) so that I could install this great new gift on a PC abandoned by my father.  In my small home office I&#39;m currently running Windows 2000, Win XP, Fedora Core 6, CentOS 4.6, and am usually connected to a CentOs 4.6 machine and a hand full of Win2k servers.   Since Ubuntu Linux is &quot;linux for human beings&quot;, I thought I&#39;d give it a go.  No dice.  Three quarters of the way through the boot process something would hang, and after multiple attempts I gave up, and surrendered a small portion of my humanity.  Along the way I downloaded a new version of <a href="http://www.bittorrent.com/" target="_blank" title="Bittorrent">bittorrent</a> , and the latest build of <a href="http://torrent.fedoraproject.org/" title="More red hats!! Fedora Core 9">Fedora Core 9</a>.  What the heck.
+
+It&#39;s been dawning on me lately that simple things might actually work better.  I believe the exact moment of this epiphany was when I was trying to build an <a href="http://www.asterisk.org/" target="_blank" title="Asterix - DIY VOIP">Asterix</a>  box for the house. Our 2.4GHz cordless phones (or our neighbors) were knocking out the linksys WRT54G wireless routers I have scattered around.  Something called &quot;Asterix @ Home&quot; (now called <a href="http://asteriskathome.sourceforge.net/" target="_blank" title="Trixbox">trixbox </a> ) beckoned.  Our home would have it&#39;s own multi-line VOIP server connecting us to the world.  I just needed a Plain old phone to test some wiring.  A trip to <a href="http://www.mapquest.com/maps/60+Main+St+Delhi+NY+13753-1121/?" target="_blank" title="Who in their right mind wants to take a virtual tour a Family Dollar Store??">Family Dollar</a>  and $7 later and I had a working phone that sported a callerID display and a bunch of programmable buttons.  That&#39;s when it hit me:  My little family dollar phone had no power supply, no configuring, no patches, no upgrades, and unlike the VOIP box, it got a dial tone.  A miracle, and for less that 10 bucks.  Now I&#39;ve freed up another machine to try to install Ubuntu on. No, wait.
+
+Our new house has a postage stamp sized lawn.  My move to simplicity really started a a bit over a year ago, a  couple weeks after we moved in.  The grass was growing.  Not wanting to be the scourge of the neighborhood I set out to find a lawnmower. I would also need a gas can.  Since, we don&#39;t have a garage, we&#39;d need a shed to store the mower and the gas can.   There were some very cool shed designs in an old issue of <a href="http://www.popularmechanics.com/home_journal/home_improvement/1276536.html" target="blank">popular mechanics</a> at the library, but the grass was really getting up there.
+
+I&#39;m now the proud owner of a 1930&#39;s vintage Montgomery Ward Reel lawnmower.  It&#39;s been lovingly cared for by my 90 year old neighbor since it&#39;s original purchase, and since he has three others he thought $30 was a fair price.  The lawn looks great. It takes about 10 minutes to cut.  The mower fits nicely under the porch wrapped in garbage bags. Spray the blades of a reel mower with Pledge furniture polish, not 10W40 and the grass won&#39;t stick.  It&#39;s simple. It was cheap. It works as well or better that its complicated cousins.
+
+That brings me back to pepper.  I&#39;ve always loved the stuff.  As a kid I thought it was great when waiters in restaurants would come around with giant pepper grinders. Great fun.  I&#39;ve had a succession of cool looking grinders, all of which disappeared during the move.  A crisis.  Must. Have. Pepper.  This lead to the $1.39 cent purchase of the above picture &quot;Best Yet&quot; pepper.  Amazingly enough, this stuff comes <em><strong>pre ground</strong></em> !  And ground to a powdery fine wonderful consistency never attained by any of my fancy grinders. And the taste...who knew?  Chicken soup suddenly tastes like Grandma&#39;s.
+
+I&#39;m sold. Simple is the way it should be.
