@@ -1,6 +1,37 @@
-# Minimal Mistakes
+# davekopecek.com
 
-**[Minimal Mistakes](http://mmistakes.github.io/minimal-mistakes)** is a two column responsive Jekyll theme perfect for powering your GitHub hosted blog built. Compatible with Jekyll 3.0 and up.
+** This is my personal blog. It was created using [Minimal Mistakes](http://mmistakes.github.io/minimal-mistakes)** , a two column responsive Jekyll theme.
+
+I maintain and deploy this blog from a Windows 10 system. I'm not a "ruby guy" so things that may be obvious to other were certainly not to me. Here's some info about my current system:
+
+<pre>
+C:\>ruby -v
+ruby 2.0.0p645 (2015-04-13) [x64-mingw32]
+
+C:\>gem -v
+2.0.14
+
+C:\>jekyll -v
+jekyll 3.1.2
+
+C:\>bundle -v
+Bundler version 1.11.2
+</pre>
+
+To start Jekyll from my projects directory
+<pre>
+C:\>cd Users\Dave\Projects\davekopecek\site
+bundle exec jekyll server
+</pre>
+
+## Getting Jekyll and Minimal Mistakes to Run on Windows.
+
+This took a bit of doing. Your mileage may vary.
+
+
+
+
+
 
 ## Minimal Mistakes is all about:
 
