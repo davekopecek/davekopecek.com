@@ -17,7 +17,7 @@ My personal blog. It was created using [Minimal Mistakes](http://mmistakes.githu
 To start Jekyll from my projects directory
 
     C:\>cd C:\Users\Dave\Projects\davekopecek\site
-    C:\Users\Dave\Projects\davekopecek\site>bundle exec jekyll server
+    C:\Users\Dave\Projects\davekopecek\site>bundle exec jekyll serve
 
 ## Getting Jekyll and Minimal Mistakes to Run on Windows.
 
@@ -25,14 +25,15 @@ This took a bit of doing. Your mileage may vary.
 
 ### Getting rid of the CRAZY SSL Error
 
-This has to do with your gem version. Apparently there were a few versions that were released with incorrect or missing cacert.pem files. This fix worked for me:
+Problem: After running `bundle exec jekyll serve` you see this embedded in the output:
+
+    SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed
+
+This has to do with your gem version. Apparently there were a few versions that were released with incorrect or missing cacert.pem files. There are a lot of suggestions for fixing this out there. The ONLY one that worked was Jerome Cheng's solution found [here](http://ayulin.net/blog/2015/jekyll-3-beta-on-windows/) Scroll down to "Fix SSL the Right Way"
 
 
+Many Thanks to Jerome for this solution. I was damn near ready to toss it all and fire up wordpress over this issue. 
 
-Many Thanks to xxx for this solution. His post is here.
-
-
-There are a lot of other suggestionssuggestions out there. These include:
 
 ### Getting rid of the wdm Gemfile error on startup
 
