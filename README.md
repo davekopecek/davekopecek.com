@@ -37,8 +37,8 @@ Many Thanks to Jerome for this solution. I was damn near ready to toss it all an
 
 ### Getting rid of the wdm Gemfile error on startup
 
-**Add wdm with `gem install wdm`
-**Follow the instructions in the startup error message and add `gem 'wdm', '>= 0.1.0' if Gem.win_platform?` to /Gemfile
+*Add wdm with `gem install wdm`
+*Follow the instructions in the startup error message and add `gem 'wdm', '>= 0.1.0' if Gem.win_platform?` to /Gemfile
 
 
 To learn how to install and use this theme check out the [Setup Guide](http://mmistakes.github.io/minimal-mistakes/theme-setup/) for more information.
