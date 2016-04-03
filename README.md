@@ -52,10 +52,9 @@ KISS deployment using rsync 'cause that's how I roll:
 
 ./project-dir/pssync.sh
 
-Gist of the rsync script:
+Gist of the rsync script. Can be run from powershell:
 
-    rsync -v -rlt -z --delete -e "ssh -i /drives/C/path/to/my/key/id_rsa.ppk -o StrictHostKeyChecking=n
-o -o UserKnownHostsFile=/dev/null" "/drives/c/Users/Dave/Projects/davekopecek/site/_site/" "username@myserver.comt:httpdocs/"
+    rsync -v -rlt -z --delete -e "ssh -i /drives/C/path/to/my/key/id_rsa.ppk -o StrictHostKeyChecking=n o -o UserKnownHostsFile=/dev/null" "/drives/c/Users/Dave/Projects/davekopecek/site/_site/" "username@myserver.comt:httpdocs/"
 
 ### Documentation for Minimal Mistakes
 
