@@ -4,6 +4,7 @@ title: CloudFlare Command Line Cache Clear
 modified:
 categories:
 tags: [cloudflare]
+comments: true
 date: 2016-04-03T13:00:33-04:00
 ---
 
