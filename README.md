@@ -4,7 +4,7 @@ My personal blog. Created using [Minimal Mistakes](http://mmistakes.github.io/mi
 
     C:\>ruby -v
     ruby 2.0.0p645 (2015-04-13) [x64-mingw32]
-    
+
     C:\>gem -v
     2.0.14
 
@@ -17,7 +17,11 @@ My personal blog. Created using [Minimal Mistakes](http://mmistakes.github.io/mi
 To start Jekyll from my projects directory
 
     C:\>cd C:\Users\Dave\Projects\davekopecek\site
-    C:\Users\Dave\Projects\davekopecek\site>bundle exec jekyll serve
+    C:\Users\Dave\Projects\davekopecek\site>bundle exec jekyll serve --config _config.yml,_config_dev.yml
+
+Above will run using _config_dev.yml - This file overrides url with http://127.0.0.1:4000.
+It's excluded from the repo with the .gitignore file
+
 
 ## Getting Jekyll and Minimal Mistakes to Run on Windows.
 
@@ -31,7 +35,7 @@ Problem: After running `bundle exec jekyll serve` this error embedded in the out
 
 This has to do with current gem version. There were a few versions that were released with incorrect or missing cacert.pem files. There are a lot of suggestions for fixing this out there. The ONLY one that worked was Jerome Cheng's solution found [here](http://ayulin.net/blog/2015/jekyll-3-beta-on-windows/) Scroll down to "Fix SSL the Right Way"
 
-Many Thanks to Jerome for this solution. I was damn near ready to toss it all and fire up Wordpress over this issue. 
+Many Thanks to Jerome for this solution. I was damn near ready to toss it all and fire up Wordpress over this issue.
 
 ### Getting rid of the wdm Gemfile error on startup
 
@@ -46,7 +50,7 @@ Many Thanks to Jerome for this solution. I was damn near ready to toss it all an
 * Edit _posts/new-post-title.md
 * Git add / commit / push
 
-### Deploying 
+### Deploying
 
 KISS deployment using rsync 'cause that's how I roll:
 
