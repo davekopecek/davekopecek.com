@@ -54,7 +54,10 @@ Many Thanks to Jerome for this solution. I was damn near ready to toss it all an
 
 KISS deployment using rsync 'cause that's how I roll:
 
-'./pssync.sh'
+     bundle exec jekyll build  // This will build the site without _config_dev.yml / 127.0.0.1:4000
+     ./syncblog.sh
+     ./clearblogcache.sh
+
 
 Gist of the rsync script. Can be run from powershell:
 
