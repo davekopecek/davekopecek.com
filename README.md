@@ -59,11 +59,17 @@ KISS deployment using rsync 'cause that's how I roll:
      ./clearblogcache.sh
 
 
-Gist of the rsync script. Can be run from powershell:
+Gist of the syncblog.sh script. Can be run from powershell:
 
     rsync -v -rlt -z --delete -e "ssh -i /drives/C/path/to/my/key/id_rsa.ppk -o StrictHostKeyChecking=n o -o UserKnownHostsFile=/dev/null" "/drives/c/Users/Dave/Projects/davekopecek/site/_site/" "username@myserver.comt:httpdocs/"
 
+Gist of clearblogcache.sh [Documented Here](http://www.davekopecek.com/cloudflare-command-line-cache-clear)
 
+    curl -X DELETE "https://api.cloudflare.com/client/v4/zones/:identifier/purge_cache" \
+    -H "Content-Type:application/json" \
+    -H "X-Auth-Key:1234567893feefc5f0q5000bfo0c38d90bbeb" \
+    -H "X-Auth-Email:example@example.com"
+    --data '{"purge_everything":true}'
 
 ### Documentation for Minimal Mistakes
 
