@@ -5,7 +5,7 @@ modified:
 categories:
 excerpt:
 comments: true
-tags: [Ubuntu on Windows]
+tags: [Bash, Ubuntu on Windows]
 image:
   feature: ubuntu-on-windows-10.jpg
   credit: yosuke muroya
