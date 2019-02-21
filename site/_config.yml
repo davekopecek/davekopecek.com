@@ -1,0 +1,77 @@
+# Site wide configuration
+
+title:            DaveKopecek.com
+locale:           en_US
+url:              https://www.davekopecek.com
+
+# Jekyll configuration
+
+permalink:   /:categories/:title/
+markdown:    kramdown
+highlighter: rouge
+sass:
+  sass_dir: _sass
+  style: compressed
+gems:
+  - jekyll-sitemap
+  - jekyll-gist
+
+kramdown:
+  auto_ids: true
+  footnote_nr: 1
+  entity_output: as_char
+  toc_levels: 1..6
+  enable_coderay: false
+
+
+# Octopress
+
+# Default extensions
+post_ext: md
+page_ext: md
+
+# Found in _templates/
+post_layout: post
+page_layout: page
+
+# Format titles with titlecase?
+titlecase: true
+
+
+# Site owner
+owner:
+  name: Dave Kopecek
+  #avatar:         davekopecek.jpeg
+  avatar:         dave-kopecek.jpg
+  bio:            "The Blog That Time Forgot."
+  email:          dave.kopecek@gmail.com
+  disqus-shortname: davekopecek
+  twitter:  davekopecek
+  facebook: davekopecek
+  google:
+    plus: #username
+    analytics: UA-15854484-1
+    verify:
+    ad-client:
+    ad-slot:
+  bing-verify:
+  github:   davekopecek
+  bitbucket: davekopecek
+  stackoverflow: 4730908/dave-kopecek
+  linkedin: dave-kopecek-054b4618
+  xing: #username
+  instagram: davekopecek
+  lastfm: #username
+  tumblr: #username
+  pinterest: davekopecek
+  foursquare: #username
+  steam: #username
+  dribbble: #username
+  youtube: #username
+  soundcloud: #username
+  weibo: #username
+  flickr: #username
+  codepen: #username
+
+include: [".htaccess"]
+exclude: ["vendor","lib", "config.rb", "Capfile", "config", "log", "Rakefile", "Rakefile.rb", "tmp", "less", "*.sublime-project", "*.sublime-workspace", "test", "spec", "Gruntfile.js", "package.json", "node_modules", "Gemfile", "Gemfile.lock", "LICENSE", "README.md"]
