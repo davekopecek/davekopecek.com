@@ -2,7 +2,7 @@
 
 My personal blog. Created [Jekyll](https://jekyllrb.com/docs/pages/) using [Minimal Mistakes](http://mmistakes.github.io/minimal-mistakes) theme. All commands from WSL-Ubuntu shell
 
-###Local Startup
+###Local Development Environment
 
 Using WSL, run with dev config on localhost:
 
@@ -47,7 +47,7 @@ Rsync deploy to production from `sites` directory:
 
      # // This will build the site without _config_dev.yml on 127.0.0.1
      bundle exec jekyll build
-     ../scripts/deploys.sh
+     ../scripts/deploy.sh
      # Clear cloudflare cache
      #../scipts/clearblogcache.sh
 
