@@ -1,0 +1,482 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Bash Your Mac Envy with Ubuntu on Windows &#8211; DaveKopecek.com</title>
+<meta name="description" content="When I stumbled on Dustin Kurkland’s blog post Ubuntu on Windows – The Ubuntu Userspace for Windows Developers on March 31st I really thought I had found the setup for an elaborate April Fool’s day prank. An Ubuntu user space inside of windows? Crazy Talk.
+
+Windows Bourne Again
+
+I spent the last week of March wrestling with various versions Cygwin &amp; Git Bash that accumulated on my Windows 10 system. Scripts that worked in one didn’t work in another. An evening spent with rix0rrr’s’ fantastic Windows Path Editor was time well spent, I had a “good enough” solution but I was still left feeling burned. I have simple needs. Just let me drop into a good old Bash shell, get my work done and I’ll be on my way. The cool kids with the shiny Macs can do it. Why, Windows? Why can’t I?
+
+##He Clicked on Preview Build 14316 and You’ll Never Guess What Happened Next !!
+
+And then there were more rumblings. No, Dustin hadn’t set us all up with a cruel joke. From the mouth of Microsoft itself on April 6, 2016:
+
+
+  
+    Today we are releasing Windows 10 Insider Preview Build 14316 to Windows Insiders in the Fast ring…
+  
+
+
+
+  
+    Here’s what’s new in Build 14316
+Run native Bash on Ubuntu on Windows: In this build, you can natively run Bash in Windows as announced last week at Build 2016.
+  
+
+
+Game On! I had enrolled in Microsoft’s Insider Program pre-Windows 10. Golden ticket in hand I fired up to the old machine in the attic, installed about a bazillion updates and finally got Build 14316. A little more googling revealed the need to visit the Turn Windows Features on or off to enable the Windows Subsystem for Linux(Beta) option. A reboot later and:
+
+
+  
+  Entered 'bash' from CMD prompt to install.
+
+
+
+  
+  Packages!! Ima Git me some.
+
+
+Better than Lickable Wallpaper
+
+  
+  .
+
+
+
+  
+  Looks like Trusty.
+
+
+You get the idea. I feel my Mac envy fading.
+
+What? No Sprinkles?
+
+Damn it. I just had to push the envlope. Had to. Tried sudo apt-get install docker-engine and no dice. It seems with all the Azure / Docker buzz floating around this might a very cool thing for Redmond to get all over. I am never satisfied. Well, maybe for a little while.
+
+
+  
+  No Docker, But I'm still loving this.
+
+">
+<meta name="keywords" content="Bash, Ubuntu on Windows">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Bash Your Mac Envy with Ubuntu on Windows">
+<meta name="twitter:description" content="When I stumbled on Dustin Kurkland’s blog post Ubuntu on Windows – The Ubuntu Userspace for Windows Developers on March 31st I really thought I had found the setup for an elaborate April Fool’s day prank. An Ubuntu user space inside of windows? Crazy Talk.
+
+Windows Bourne Again
+
+I spent the last week of March wrestling with various versions Cygwin &amp; Git Bash that accumulated on my Windows 10 system. Scripts that worked in one didn’t work in another. An evening spent with rix0rrr’s’ fantastic Windows Path Editor was time well spent, I had a “good enough” solution but I was still left feeling burned. I have simple needs. Just let me drop into a good old Bash shell, get my work done and I’ll be on my way. The cool kids with the shiny Macs can do it. Why, Windows? Why can’t I?
+
+##He Clicked on Preview Build 14316 and You’ll Never Guess What Happened Next !!
+
+And then there were more rumblings. No, Dustin hadn’t set us all up with a cruel joke. From the mouth of Microsoft itself on April 6, 2016:
+
+
+  
+    Today we are releasing Windows 10 Insider Preview Build 14316 to Windows Insiders in the Fast ring…
+  
+
+
+
+  
+    Here’s what’s new in Build 14316
+Run native Bash on Ubuntu on Windows: In this build, you can natively run Bash in Windows as announced last week at Build 2016.
+  
+
+
+Game On! I had enrolled in Microsoft’s Insider Program pre-Windows 10. Golden ticket in hand I fired up to the old machine in the attic, installed about a bazillion updates and finally got Build 14316. A little more googling revealed the need to visit the Turn Windows Features on or off to enable the Windows Subsystem for Linux(Beta) option. A reboot later and:
+
+
+  
+  Entered 'bash' from CMD prompt to install.
+
+
+
+  
+  Packages!! Ima Git me some.
+
+
+Better than Lickable Wallpaper
+
+  
+  .
+
+
+
+  
+  Looks like Trusty.
+
+
+You get the idea. I feel my Mac envy fading.
+
+What? No Sprinkles?
+
+Damn it. I just had to push the envlope. Had to. Tried sudo apt-get install docker-engine and no dice. It seems with all the Azure / Docker buzz floating around this might a very cool thing for Redmond to get all over. I am never satisfied. Well, maybe for a little while.
+
+
+  
+  No Docker, But I'm still loving this.
+
+">
+<meta name="twitter:site" content="@davekopecek">
+<meta name="twitter:creator" content="@davekopecek">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.davekopecek.com/images/ubuntu-on-windows-10.jpg">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Bash Your Mac Envy with Ubuntu on Windows">
+<meta property="og:description" content="When I stumbled on Dustin Kurkland’s blog post Ubuntu on Windows – The Ubuntu Userspace for Windows Developers on March 31st I really thought I had found the setup for an elaborate April Fool’s day prank. An Ubuntu user space inside of windows? Crazy Talk.
+
+Windows Bourne Again
+
+I spent the last week of March wrestling with various versions Cygwin &amp; Git Bash that accumulated on my Windows 10 system. Scripts that worked in one didn’t work in another. An evening spent with rix0rrr’s’ fantastic Windows Path Editor was time well spent, I had a “good enough” solution but I was still left feeling burned. I have simple needs. Just let me drop into a good old Bash shell, get my work done and I’ll be on my way. The cool kids with the shiny Macs can do it. Why, Windows? Why can’t I?
+
+##He Clicked on Preview Build 14316 and You’ll Never Guess What Happened Next !!
+
+And then there were more rumblings. No, Dustin hadn’t set us all up with a cruel joke. From the mouth of Microsoft itself on April 6, 2016:
+
+
+  
+    Today we are releasing Windows 10 Insider Preview Build 14316 to Windows Insiders in the Fast ring…
+  
+
+
+
+  
+    Here’s what’s new in Build 14316
+Run native Bash on Ubuntu on Windows: In this build, you can natively run Bash in Windows as announced last week at Build 2016.
+  
+
+
+Game On! I had enrolled in Microsoft’s Insider Program pre-Windows 10. Golden ticket in hand I fired up to the old machine in the attic, installed about a bazillion updates and finally got Build 14316. A little more googling revealed the need to visit the Turn Windows Features on or off to enable the Windows Subsystem for Linux(Beta) option. A reboot later and:
+
+
+  
+  Entered 'bash' from CMD prompt to install.
+
+
+
+  
+  Packages!! Ima Git me some.
+
+
+Better than Lickable Wallpaper
+
+  
+  .
+
+
+
+  
+  Looks like Trusty.
+
+
+You get the idea. I feel my Mac envy fading.
+
+What? No Sprinkles?
+
+Damn it. I just had to push the envlope. Had to. Tried sudo apt-get install docker-engine and no dice. It seems with all the Azure / Docker buzz floating around this might a very cool thing for Redmond to get all over. I am never satisfied. Well, maybe for a little while.
+
+
+  
+  No Docker, But I'm still loving this.
+
+">
+<meta property="og:url" content="https://www.davekopecek.com/bash-your-mac-envy-ubuntu-on-windows/">
+<meta property="og:site_name" content="DaveKopecek.com">
+
+<meta property="og:image" content="https://www.davekopecek.com/images/ubuntu-on-windows-10.jpg">
+
+
+
+
+
+
+<link rel="canonical" href="https://www.davekopecek.com/bash-your-mac-envy-ubuntu-on-windows/">
+<link href="https://www.davekopecek.com/feed.xml" type="application/atom+xml" rel="alternate" title="DaveKopecek.com Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://www.davekopecek.com/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="https://www.davekopecek.com/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="https://www.davekopecek.com/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="https://www.davekopecek.com/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="https://www.davekopecek.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="https://www.davekopecek.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="https://www.davekopecek.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://www.davekopecek.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.davekopecek.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.davekopecek.com/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="https://www.davekopecek.com/">DaveKopecek.com</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				    <li><a href="https://www.davekopecek.com/about/" >About</a></li>
+				
+				    
+				    <li><a href="https://www.davekopecek.com/posts/" >Posts</a></li>
+				
+				    
+				    <li><a href="http://aisle8.net" target="_blank">Aisle8</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+  <div class="image-wrap">
+  <img src=
+    
+      "https://www.davekopecek.com/images/ubuntu-on-windows-10.jpg"
+    
+  alt="Bash Your Mac Envy with Ubuntu on Windows feature image">
+  
+    <span class="image-credit">Photo Credit: <a href="https://www.flickr.com/photos/hamur0w0/">yosuke muroya</a></span>
+  
+  </div><!-- /.image-wrap -->
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="https://www.davekopecek.com/images/dave-kopecek.jpg" class="bio-photo" alt="Dave Kopecek bio photo">
+
+
+  <h3 itemprop="name">Dave Kopecek</h3>
+  <p>The Blog That Time Forgot.</p>
+  <a href="mailto:dave.kopecek@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  <a href="http://twitter.com/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+  <a href="http://facebook.com/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-facebook-square"></i> Facebook</a>
+  
+  <a href="http://linkedin.com/in/dave-kopecek-054b4618" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  <a href="http://instagram.com/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-instagram"></i> Instagram</a>
+  
+  <a href="http://bitbucket.org/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-bitbucket"></i> BitBucket</a>
+  <a href="http://github.com/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  <a href="http://stackoverflow.com/users/4730908/dave-kopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i> Stackoverflow</a>
+  
+  
+  <a href="http://www.pinterest.com/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-pinterest"></i> Pinterest</a>
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="https://www.davekopecek.com/bash-your-mac-envy-ubuntu-on-windows/" rel="bookmark" title="Bash Your Mac Envy with Ubuntu on Windows">Bash Your Mac Envy with Ubuntu on Windows</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>When I stumbled on Dustin Kurkland’s blog post <a href="http://blog.dustinkirkland.com/2016/03/ubuntu-on-windows.html">Ubuntu on Windows – The Ubuntu Userspace for Windows Developers</a> on March 31st I really thought I had found the setup for an elaborate April Fool’s day prank. An Ubuntu user space inside of windows? Crazy Talk.</p>
+
+<h2 id="windows-bourne-again">Windows Bourne Again</h2>
+
+<p>I spent the last week of March wrestling with various versions Cygwin &amp; Git Bash that accumulated on my Windows 10 system. Scripts that worked in one didn’t work in another. An evening spent with <a href="https://github.com/rix0rrr">rix0rrr</a>’s’ fantastic <a href="https://rix0rrr.github.io/WindowsPathEditor/">Windows Path Editor</a> was time well spent, I had a “good enough” solution but I was still left feeling burned. I have simple needs. Just let me drop into a good old Bash shell, get my work done and I’ll be on my way. The cool kids with the shiny Macs can do it. Why, Windows? Why can’t I?</p>
+
+<p>##He Clicked on <a href="https://blogs.windows.com/windowsexperience/2016/04/06/announcing-windows-10-insider-preview-build-14316/">Preview Build 14316</a> and You’ll Never Guess What Happened Next !!</p>
+
+<p>And then there were more rumblings. No, Dustin hadn’t set us all up with a cruel joke. <em>From the mouth of <a href="https://blogs.windows.com/windowsexperience/2016/04/06/announcing-windows-10-insider-preview-build-14316/">Microsoft itself</a> on April 6, 2016:</em></p>
+
+<blockquote>
+  <blockquote>
+    <p>Today we are releasing Windows 10 Insider Preview Build 14316 to Windows Insiders in the Fast ring…</p>
+  </blockquote>
+</blockquote>
+
+<blockquote>
+  <blockquote>
+    <p>Here’s what’s new in Build 14316
+Run native Bash on Ubuntu on Windows: In this build, you can natively run Bash in Windows as announced last week at Build 2016.</p>
+  </blockquote>
+</blockquote>
+
+<p>Game On! I had enrolled in <a href="https://insider.windows.com/">Microsoft’s Insider Program</a> pre-Windows 10. Golden ticket in hand I fired up to the old machine in the attic, installed about a bazillion updates and finally got Build 14316. A little more googling revealed the need to visit the <code class="language-plaintext highlighter-rouge">Turn Windows Features on or off</code> to enable the <code class="language-plaintext highlighter-rouge">Windows Subsystem for Linux(Beta)</code> option. A reboot later and:</p>
+
+<figure>
+  <a href="/images/bash-1.jpg"><img src="/images/bash-1.jpg" /></a>
+  <figcaption><a href="bash-1.jpg" title="Entered `bash` from CMD prompt to install">Entered 'bash' from CMD prompt to install</a>.</figcaption>
+</figure>
+
+<figure>
+  <a href="/images/bash-2-git-install.jpg"><img src="/images/bash-2-git-install.jpg" /></a>
+  <figcaption><a href="bash-2-git-install.jpg" title="Packages!! Ima Git me some">Packages!! Ima Git me some</a>.</figcaption>
+</figure>
+
+<h2 id="better-than-lickable-wallpaper">Better than Lickable Wallpaper</h2>
+<figure>
+  <a href="http://45.media.tumblr.com/34ad7e4990a285be2019330be88171c6/tumblr_mtjrtyUJ1E1s0teago4_400.gif"><img src="http://45.media.tumblr.com/34ad7e4990a285be2019330be88171c6/tumblr_mtjrtyUJ1E1s0teago4_400.gif" /></a>
+  <figcaption><a href="http://45.media.tumblr.com/34ad7e4990a285be2019330be88171c6/tumblr_mtjrtyUJ1E1s0teago4_400.gif" title="Listen to the man."></a>.</figcaption>
+</figure>
+
+<figure>
+  <a href="/images/bash-5-lsb-release-a.jpg"><img src="/images/bash-5-lsb-release-a.jpg" /></a>
+  <figcaption><a href="/images/bash-5-lsb-release-a.jpg" title="Looks like Trusty">Looks like Trusty</a>.</figcaption>
+</figure>
+
+<p>You get the idea. I feel my Mac envy fading.</p>
+
+<h2 id="what-no-sprinkles">What? No Sprinkles?</h2>
+
+<p>Damn it. I just <em>had</em> to push the envlope. Had to. Tried <code class="language-plaintext highlighter-rouge">sudo apt-get install docker-engine</code> and no dice. It seems with all the Azure / Docker buzz floating around this might a very cool thing for Redmond to get all over. I am never satisfied. Well, maybe for a little while.</p>
+
+<figure>
+  <a href="/images/docker-install-errors.jpg"><img src="/images/docker-install-errors.jpg" /></a>
+  <figcaption><a href="/images/docker-install-errors.jpg" title="No Docker Love">No Docker, But I'm still loving this</a>.</figcaption>
+</figure>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=https://www.davekopecek.com/bash-your-mac-envy-ubuntu-on-windows/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.davekopecek.com/bash-your-mac-envy-ubuntu-on-windows/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=https://www.davekopecek.com/bash-your-mac-envy-ubuntu-on-windows/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Bash Your Mac Envy with Ubuntu on Windows</strong> was published on <time datetime="2016-04-12T19:28:52-04:00">April 12, 2016</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="https://www.davekopecek.com/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="https://www.davekopecek.com/articles/bury-your-secrets-and-keep-your-git-history-clean/" title="Bury Your Secrets and Keep Your Git History Clean">Bury Your Secrets and Keep Your Git History Clean</a></li>
+    
+      <li><a href="https://www.davekopecek.com/re-use-your-words-repeat-yourself-the-bash-command-line/" title="Shell Secret: (Re)Use Your Words! Repeat Yourself with the Reverse SheBang">Shell Secret: (Re)Use Your Words! Repeat Yourself with the Reverse SheBang</a></li>
+    
+      <li><a href="https://www.davekopecek.com/beat-bad-wifi-with-the-linux-screen-command/" title="Beat Bad WIFI With the Linux Screen Command">Beat Bad WIFI With the Linux Screen Command</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2025 Dave Kopecek. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme. <a href="/cheat-sheet">Bonus: Cheat Sheet</a></span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://www.davekopecek.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="https://www.davekopecek.com/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-15854484-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'davekopecek'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+</body>
+</html>

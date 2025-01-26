@@ -1,0 +1,402 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Beat Bad WIFI With the Linux Screen Command &#8211; DaveKopecek.com</title>
+<meta name="description" content="Nothing makes you crankier than a flakey WIFI connection, right?  What good is being able to work from anywhere you want if you can’t work from anywhere you want? I can’t fix your WIFI connection, but if your work  takes you to the Linux command line I suggest you check out the screen command.
+
+TL;DR
+
+Screen lets you toggle between terminal screens or windows from a single ssh session. Drop your connection?  No Problem. Log back in and re-attached (screen -r) to your running screen.
+
+Screen is also just the ticket for long running processes. Pop into a screen, start the process, detach, log off and go get coffee. It’ll be there when you get back.
+
+Quick And Dirty
+
+Install with:
+
+[root@machine ~] yum install screen
+
+
+Screen Basics: Make / Switch / Detach / Re-Attach
+
+[root@machine ~] screen
+[root@machine ~] "ctrl-a" "c"  // make a new screen
+[root@machine ~] "ctrl-a" "n"  // switch to next screen
+[root@machine ~] "ctrl-a" "d"  // detach from screen on purpose
+... or your connection drops...
+[root@machine ~] screen -r     // reattach your screen
+
+
+If you have many screens screen -r may give you a list. Reattach to your favorite like this:
+
+[root@machine~] screen -r 12345.pts-0.machine
+
+
+Screen Tutorial
+
+Here’s fantactic tutorial appropriately titled How To Use Linux Screen. If you’re new to screen scroll down to the bottom and check out the video first. You’ll be up to speed in no time.
+
+I use screen all the time, but if you google top linux commands it rarely makes the listicle hit parade. Is there some other command all the cool kids are using? Why? Bueller? Bueller?
+
+">
+<meta name="keywords" content="Linux Screen">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Beat Bad WIFI With the Linux Screen Command">
+<meta name="twitter:description" content="Nothing makes you crankier than a flakey WIFI connection, right?  What good is being able to work from anywhere you want if you can’t work from anywhere you want? I can’t fix your WIFI connection, but if your work  takes you to the Linux command line I suggest you check out the screen command.
+
+TL;DR
+
+Screen lets you toggle between terminal screens or windows from a single ssh session. Drop your connection?  No Problem. Log back in and re-attached (screen -r) to your running screen.
+
+Screen is also just the ticket for long running processes. Pop into a screen, start the process, detach, log off and go get coffee. It’ll be there when you get back.
+
+Quick And Dirty
+
+Install with:
+
+[root@machine ~] yum install screen
+
+
+Screen Basics: Make / Switch / Detach / Re-Attach
+
+[root@machine ~] screen
+[root@machine ~] "ctrl-a" "c"  // make a new screen
+[root@machine ~] "ctrl-a" "n"  // switch to next screen
+[root@machine ~] "ctrl-a" "d"  // detach from screen on purpose
+... or your connection drops...
+[root@machine ~] screen -r     // reattach your screen
+
+
+If you have many screens screen -r may give you a list. Reattach to your favorite like this:
+
+[root@machine~] screen -r 12345.pts-0.machine
+
+
+Screen Tutorial
+
+Here’s fantactic tutorial appropriately titled How To Use Linux Screen. If you’re new to screen scroll down to the bottom and check out the video first. You’ll be up to speed in no time.
+
+I use screen all the time, but if you google top linux commands it rarely makes the listicle hit parade. Is there some other command all the cool kids are using? Why? Bueller? Bueller?
+
+">
+<meta name="twitter:site" content="@davekopecek">
+<meta name="twitter:creator" content="@davekopecek">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.davekopecek.com/images/wifi.jpg">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Beat Bad WIFI With the Linux Screen Command">
+<meta property="og:description" content="Nothing makes you crankier than a flakey WIFI connection, right?  What good is being able to work from anywhere you want if you can’t work from anywhere you want? I can’t fix your WIFI connection, but if your work  takes you to the Linux command line I suggest you check out the screen command.
+
+TL;DR
+
+Screen lets you toggle between terminal screens or windows from a single ssh session. Drop your connection?  No Problem. Log back in and re-attached (screen -r) to your running screen.
+
+Screen is also just the ticket for long running processes. Pop into a screen, start the process, detach, log off and go get coffee. It’ll be there when you get back.
+
+Quick And Dirty
+
+Install with:
+
+[root@machine ~] yum install screen
+
+
+Screen Basics: Make / Switch / Detach / Re-Attach
+
+[root@machine ~] screen
+[root@machine ~] "ctrl-a" "c"  // make a new screen
+[root@machine ~] "ctrl-a" "n"  // switch to next screen
+[root@machine ~] "ctrl-a" "d"  // detach from screen on purpose
+... or your connection drops...
+[root@machine ~] screen -r     // reattach your screen
+
+
+If you have many screens screen -r may give you a list. Reattach to your favorite like this:
+
+[root@machine~] screen -r 12345.pts-0.machine
+
+
+Screen Tutorial
+
+Here’s fantactic tutorial appropriately titled How To Use Linux Screen. If you’re new to screen scroll down to the bottom and check out the video first. You’ll be up to speed in no time.
+
+I use screen all the time, but if you google top linux commands it rarely makes the listicle hit parade. Is there some other command all the cool kids are using? Why? Bueller? Bueller?
+
+">
+<meta property="og:url" content="https://www.davekopecek.com/beat-bad-wifi-with-the-linux-screen-command/">
+<meta property="og:site_name" content="DaveKopecek.com">
+
+<meta property="og:image" content="https://www.davekopecek.com/images/wifi.jpg">
+
+
+
+
+
+
+<link rel="canonical" href="https://www.davekopecek.com/beat-bad-wifi-with-the-linux-screen-command/">
+<link href="https://www.davekopecek.com/feed.xml" type="application/atom+xml" rel="alternate" title="DaveKopecek.com Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://www.davekopecek.com/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="https://www.davekopecek.com/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="https://www.davekopecek.com/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="https://www.davekopecek.com/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="https://www.davekopecek.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="https://www.davekopecek.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="https://www.davekopecek.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://www.davekopecek.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.davekopecek.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.davekopecek.com/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="https://www.davekopecek.com/">DaveKopecek.com</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				    <li><a href="https://www.davekopecek.com/about/" >About</a></li>
+				
+				    
+				    <li><a href="https://www.davekopecek.com/posts/" >Posts</a></li>
+				
+				    
+				    <li><a href="http://aisle8.net" target="_blank">Aisle8</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+  <div class="image-wrap">
+  <img src=
+    
+      "https://www.davekopecek.com/images/wifi.jpg"
+    
+  alt="Beat Bad WIFI With the Linux Screen Command feature image">
+  
+    <span class="image-credit">Photo Credit: <a href="https://www.flickr.com/photos/linder/">Marcus Linder</a></span>
+  
+  </div><!-- /.image-wrap -->
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="https://www.davekopecek.com/images/dave-kopecek.jpg" class="bio-photo" alt="Dave Kopecek bio photo">
+
+
+  <h3 itemprop="name">Dave Kopecek</h3>
+  <p>The Blog That Time Forgot.</p>
+  <a href="mailto:dave.kopecek@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  <a href="http://twitter.com/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+  <a href="http://facebook.com/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-facebook-square"></i> Facebook</a>
+  
+  <a href="http://linkedin.com/in/dave-kopecek-054b4618" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  <a href="http://instagram.com/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-instagram"></i> Instagram</a>
+  
+  <a href="http://bitbucket.org/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-bitbucket"></i> BitBucket</a>
+  <a href="http://github.com/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  <a href="http://stackoverflow.com/users/4730908/dave-kopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i> Stackoverflow</a>
+  
+  
+  <a href="http://www.pinterest.com/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-pinterest"></i> Pinterest</a>
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="https://www.davekopecek.com/beat-bad-wifi-with-the-linux-screen-command/" rel="bookmark" title="Beat Bad WIFI With the Linux Screen Command">Beat Bad WIFI With the Linux Screen Command</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>Nothing makes you crankier than a flakey WIFI connection, right?  What good is being able to work from anywhere you want if you can’t work from anywhere you want? I can’t fix your WIFI connection, but if your work  takes you to the Linux command line I suggest you check out the <code class="language-plaintext highlighter-rouge">screen</code> command.</p>
+
+<h2 id="tldr">TL;DR</h2>
+
+<p>Screen lets you toggle between terminal screens or windows from a single ssh session. Drop your connection?  No Problem. Log back in and re-attached (<code class="language-plaintext highlighter-rouge">screen -r</code>) to your running screen.</p>
+
+<p>Screen is also just the ticket for long running processes. Pop into a screen, start the process, detach, log off and go get coffee. It’ll be there when you get back.</p>
+
+<h3 id="quick-and-dirty">Quick And Dirty</h3>
+
+<p>Install with:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@machine ~] yum install screen
+</code></pre></div></div>
+
+<p>Screen Basics: Make / Switch / Detach / Re-Attach</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@machine ~] screen
+[root@machine ~] "ctrl-a" "c"  // make a new screen
+[root@machine ~] "ctrl-a" "n"  // switch to next screen
+[root@machine ~] "ctrl-a" "d"  // detach from screen on purpose
+... or your connection drops...
+[root@machine ~] screen -r     // reattach your screen
+</code></pre></div></div>
+
+<p>If you have many screens <code class="language-plaintext highlighter-rouge">screen -r</code> may give you a list. Reattach to your favorite like this:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[root@machine~] screen -r 12345.pts-0.machine
+</code></pre></div></div>
+
+<h2 id="screen-tutorial">Screen Tutorial</h2>
+
+<p>Here’s fantactic tutorial appropriately titled <a href="https://www.rackaid.com/blog/linux-screen-tutorial-and-how-to/">How To Use Linux Screen</a>. If you’re new to <code class="language-plaintext highlighter-rouge">screen</code> scroll down to the bottom and check out the video first. You’ll be up to speed in no time.</p>
+
+<p>I use <code class="language-plaintext highlighter-rouge">screen</code> all the time, but if you google <code class="language-plaintext highlighter-rouge">top linux commands</code> it rarely makes the listicle hit parade. Is there some other command all the cool kids are using? Why? Bueller? Bueller?</p>
+
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=https://www.davekopecek.com/beat-bad-wifi-with-the-linux-screen-command/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.davekopecek.com/beat-bad-wifi-with-the-linux-screen-command/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=https://www.davekopecek.com/beat-bad-wifi-with-the-linux-screen-command/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Beat Bad WIFI With the Linux Screen Command</strong> was published on <time datetime="2016-04-10T20:10:01-04:00">April 10, 2016</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="https://www.davekopecek.com/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="https://www.davekopecek.com/articles/bury-your-secrets-and-keep-your-git-history-clean/" title="Bury Your Secrets and Keep Your Git History Clean">Bury Your Secrets and Keep Your Git History Clean</a></li>
+    
+      <li><a href="https://www.davekopecek.com/re-use-your-words-repeat-yourself-the-bash-command-line/" title="Shell Secret: (Re)Use Your Words! Repeat Yourself with the Reverse SheBang">Shell Secret: (Re)Use Your Words! Repeat Yourself with the Reverse SheBang</a></li>
+    
+      <li><a href="https://www.davekopecek.com/bash-your-mac-envy-ubuntu-on-windows/" title="Bash Your Mac Envy with Ubuntu on Windows">Bash Your Mac Envy with Ubuntu on Windows</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2025 Dave Kopecek. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme. <a href="/cheat-sheet">Bonus: Cheat Sheet</a></span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://www.davekopecek.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="https://www.davekopecek.com/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-15854484-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'davekopecek'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+</body>
+</html>

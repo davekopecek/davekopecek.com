@@ -1,0 +1,299 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>CloudFlare Command Line Cache Clear &#8211; DaveKopecek.com</title>
+<meta name="description" content="Here’ a quick and dirty way to refresh a site’s Cloudflare CDN cache from the command line. For large or high volume sites you would probably want to purge individual files or purge by tag but for deploying a small blog it’s just fine &amp; can be added to the end of your deployment script. It doesn’t get much simpler that this. A command line curl call to:
+
+">
+<meta name="keywords" content="cloudflare">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="CloudFlare Command Line Cache Clear">
+<meta name="twitter:description" content="Here’ a quick and dirty way to refresh a site’s Cloudflare CDN cache from the command line. For large or high volume sites you would probably want to purge individual files or purge by tag but for deploying a small blog it’s just fine &amp; can be added to the end of your deployment script. It doesn’t get much simpler that this. A command line curl call to:
+
+">
+<meta name="twitter:site" content="@davekopecek">
+<meta name="twitter:creator" content="@davekopecek">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.davekopecek.com/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="CloudFlare Command Line Cache Clear">
+<meta property="og:description" content="Here’ a quick and dirty way to refresh a site’s Cloudflare CDN cache from the command line. For large or high volume sites you would probably want to purge individual files or purge by tag but for deploying a small blog it’s just fine &amp; can be added to the end of your deployment script. It doesn’t get much simpler that this. A command line curl call to:
+
+">
+<meta property="og:url" content="https://www.davekopecek.com/cloudflare-command-line-cache-clear/">
+<meta property="og:site_name" content="DaveKopecek.com">
+
+<meta property="og:image" content="https://www.davekopecek.com/images/default-thumb.png">
+
+
+
+
+
+
+<link rel="canonical" href="https://www.davekopecek.com/cloudflare-command-line-cache-clear/">
+<link href="https://www.davekopecek.com/feed.xml" type="application/atom+xml" rel="alternate" title="DaveKopecek.com Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://www.davekopecek.com/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="https://www.davekopecek.com/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="https://www.davekopecek.com/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="https://www.davekopecek.com/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="https://www.davekopecek.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="https://www.davekopecek.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="https://www.davekopecek.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://www.davekopecek.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.davekopecek.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.davekopecek.com/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="https://www.davekopecek.com/">DaveKopecek.com</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				    <li><a href="https://www.davekopecek.com/about/" >About</a></li>
+				
+				    
+				    <li><a href="https://www.davekopecek.com/posts/" >Posts</a></li>
+				
+				    
+				    <li><a href="http://aisle8.net" target="_blank">Aisle8</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="https://www.davekopecek.com/images/dave-kopecek.jpg" class="bio-photo" alt="Dave Kopecek bio photo">
+
+
+  <h3 itemprop="name">Dave Kopecek</h3>
+  <p>The Blog That Time Forgot.</p>
+  <a href="mailto:dave.kopecek@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  <a href="http://twitter.com/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+  <a href="http://facebook.com/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-facebook-square"></i> Facebook</a>
+  
+  <a href="http://linkedin.com/in/dave-kopecek-054b4618" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  <a href="http://instagram.com/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-instagram"></i> Instagram</a>
+  
+  <a href="http://bitbucket.org/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-bitbucket"></i> BitBucket</a>
+  <a href="http://github.com/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  <a href="http://stackoverflow.com/users/4730908/dave-kopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i> Stackoverflow</a>
+  
+  
+  <a href="http://www.pinterest.com/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-pinterest"></i> Pinterest</a>
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="https://www.davekopecek.com/cloudflare-command-line-cache-clear/" rel="bookmark" title="CloudFlare Command Line Cache Clear">CloudFlare Command Line Cache Clear</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>Here’ a quick and dirty way to refresh a site’s <a href="https://www.cloudflare.com">Cloudflare</a> CDN cache from the command line. For large or high volume sites you would probably want to purge individual files or purge by tag but for deploying a small blog it’s just fine &amp; can be added to the end of your deployment script. It doesn’t get much simpler that this. A command line curl call to:</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>DELETE https://api.cloudflare.com/client/v4/zones/:identifier/purge_cache
+</code></pre></div></div>
+
+<p>with a few added parameters gets you what you need. The API is even available on free accounts. No verifications or other shenanigans are required.</p>
+
+<p>Cloudflare does a damn fine job with their API. Not only is it <a href="https://api.cloudflare.com/">fully documented</a>, but there are links on their “regular” web interface to the corresponding API calls.  It only took me two trips to clear the cache on the web interface before I saw the API link and had the, “Hey wait, I can do this from the command prompt” aha moment.</p>
+
+<h2 id="you-need">You Need</h2>
+<ul>
+  <li>Your “Global API Key”</li>
+  <li>Your domain’s Cloudflare zone id</li>
+</ul>
+
+<h3 id="get-your-global-api-key">Get Your “Global API Key”</h3>
+<p>The “Global API Key” is on your “My Settings” page toward the bottom of the “Account” tab. Click the dropdown next to your email address in the header to navigate to “My Settings”.</p>
+
+<h3 id="get-your-domains-cloudlare-zone-id">Get Your Domain’s Cloudlare Zone Id</h3>
+
+<p>Replace your domain name, email address and global API key from above ( X-Auth-Key) below. Grap the zone id out of the returned JSON and save it for the next step.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ curl -X GET "https://api.cloudflare.com/client/v4/zones?name=example.com&amp;status=active&amp;page=1&amp;per_page=20&amp;order=status&amp;direction=desc&amp;match=all" \
+-H "X-Auth-Email: user@example.com" \
+-H "X-Auth-Key: c2547eb745079dac9320b638f5e225cf483cc5cfdda41" \
+-H "Content-Type: application/json"
+</code></pre></div></div>
+
+<p>Cloudflare documentation <a href="https://www.cloudflare.com/docs/next/#zone-list-zones">here</a></p>
+
+<h3 id="clear-your-cache">Clear Your Cache.</h3>
+
+<p>Paste your newly found :identifier, email and key &amp; you’re set.</p>
+
+<div class="language-plaintext highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -X DELETE "https://api.cloudflare.com/client/v4/zones/:identifier/purge_cache" \
+-H "Content-Type:application/json" \
+-H "X-Auth-Key:1234567893feefc5f0q5000bfo0c38d90bbeb" \
+-H "X-Auth-Email:example@example.com"
+--data '{"purge_everything":true}'
+</code></pre></div></div>
+
+<p>Cloudflare documentation <a href="https://api.cloudflare.com/#zone-purge-all-files">here</a></p>
+
+<h3 id="winner-winner">Winner Winner</h3>
+
+<p>That’s It! Add that puppy to the end of your deployment script. Go Crazy. Not too crazy – you’re supposed to treat your API key like a password, but you get the point.</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=https://www.davekopecek.com/cloudflare-command-line-cache-clear/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.davekopecek.com/cloudflare-command-line-cache-clear/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=https://www.davekopecek.com/cloudflare-command-line-cache-clear/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>CloudFlare Command Line Cache Clear</strong> was published on <time datetime="2016-04-03T13:00:33-04:00">April 03, 2016</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+    <section id="disqus_thread"></section><!-- /#disqus_thread -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="https://www.davekopecek.com/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="https://www.davekopecek.com/articles/bury-your-secrets-and-keep-your-git-history-clean/" title="Bury Your Secrets and Keep Your Git History Clean">Bury Your Secrets and Keep Your Git History Clean</a></li>
+    
+      <li><a href="https://www.davekopecek.com/re-use-your-words-repeat-yourself-the-bash-command-line/" title="Shell Secret: (Re)Use Your Words! Repeat Yourself with the Reverse SheBang">Shell Secret: (Re)Use Your Words! Repeat Yourself with the Reverse SheBang</a></li>
+    
+      <li><a href="https://www.davekopecek.com/bash-your-mac-envy-ubuntu-on-windows/" title="Bash Your Mac Envy with Ubuntu on Windows">Bash Your Mac Envy with Ubuntu on Windows</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2025 Dave Kopecek. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme. <a href="/cheat-sheet">Bonus: Cheat Sheet</a></span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://www.davekopecek.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="https://www.davekopecek.com/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-15854484-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+  
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+    var disqus_shortname = 'davekopecek'; // required: replace example with your forum shortname
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    /* * * DON'T EDIT BELOW THIS LINE * * */
+    (function () {
+        var s = document.createElement('script'); s.async = true;
+        s.type = 'text/javascript';
+        s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    }());
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+
+
+
+
+</body>
+</html>

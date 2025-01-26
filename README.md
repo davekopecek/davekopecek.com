@@ -54,7 +54,7 @@ jekyll -v
 
 ### Local Development
 
-Using WSL, run with dev config on localhost:
+Using WSL, run with dev config on localhost
 
 ```bash
 bundle exec jekyll serve --config _config.yml,_config_dev.yml
@@ -71,6 +71,8 @@ url: "http://127.0.0.1:4000"   # Local development URL
 Local startup, include posts in `_drafts` folder:
 
 ```bash
+# This will serve the site and make draft posts available at http://127.0.0.1:4000
+# Draft posts will appear as if they were dated today
 bundle exec jekyll serve --config _config.yml,_config_dev.yml --drafts
 ```
 
@@ -81,9 +83,10 @@ pkill -f jekyll
 
 ### Post Workflow
 
-Octopress provides convenient commands for creating and managing posts:
+Octopress provides convenient commands for creating and managing posts. Run all commands from the `/site` directory.
 
 ```bash
+
 # Create a new post
 bundle exec octopress new post "My New Post Title"
 
@@ -112,12 +115,12 @@ image:
 ```
 
 * View @ http://127.0.0.1:4000/
-* Edit post in your preferred editor
+* Edit post Markdown or text editor du jour
 * Git add / commit / push / deploy as below
 
 ### Post Images
 
-There are several ways to include images in your posts:
+There are several ways to include images in posts:
 
 1. Basic Markdown syntax:
 ```markdown
@@ -170,17 +173,19 @@ convert source-image.jpg -resize 1900x500^ -gravity center -extent 1900x500 YYYY
 
 ### Deploying
 
-Rsync deploy to production from `sites` directory:
+The site is automatically deployed via GitHub webhooks and Plesk when changes are pushed to the main branch. The `_site` directory containing the built site must be committed to the repository.
+
+To build the site for production:
 
 ```bash
-# This will build the site without _config_dev.yml on 127.0.0.1
-bundle exec jekyll build
-../scripts/deploy.sh
-# Clear cloudflare cache
-#../scipts/clearblogcache.sh
+cd site
+JEKYLL_ENV=production bundle exec jekyll build
+git add _site
+git commit -m "Update built site"
+git push
 ```
 
-Optionally clear cloudflare cache: [Documented Here](http://www.davekopecek.com/cloudflare-command-line-cache-clear)
+> Note: Always build the site with `JEKYLL_ENV=production` to ensure correct URLs and settings.
 
 ### Documentation
 - [Jekyll Installation Guide](https://jekyllrb.com/docs/installation/ubuntu/)

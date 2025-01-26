@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
+<title type="text">DaveKopecek.com</title>
+<generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
+<link rel="self" type="application/atom+xml" href="https://www.davekopecek.com/feed.xml" />
+<link rel="alternate" type="text/html" href="https://www.davekopecek.com" />
+<updated>2025-01-25T14:08:45-05:00</updated>
+<id>https://www.davekopecek.com/</id>
+<author>
+  <name>Dave Kopecek</name>
+  <uri>https://www.davekopecek.com/</uri>
+  <email>dave.kopecek@gmail.com</email>
+</author>
+
+
+<entry>
+  <title type="html"><![CDATA[Bury Your Secrets and Keep Your Git History Clean]]></title>
+  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/bury-your-secrets-and-keep-your-git-history-clean/" />
+  <id>https://www.davekopecek.com/articles/bury-your-secrets-and-keep-your-git-history-clean</id>
+  <published>2025-01-25T12:00:00-05:00</published>
+  <updated>2025-01-25T12:00:00-05:00</updated>
+  <author>
+    <name>Dave Kopecek</name>
+    <uri>https://www.davekopecek.com</uri>
+    <email>dave.kopecek@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I know. Git is hard. But do you know what else makes life hard? Looking like some stupid jamook. In this business, it pays to keep things tight—loose ends get you whacked. Every half-baked commit, every “fix typo” message, it’s all evidence that you were sloppy on the job. And trust me, you don’t want your crew—or worse, the boss—digging through your Git history like it’s the FBI cracking open old case files.&lt;/p&gt;
+
+&lt;p&gt;Your Git history should read like Frank Costello’s grand jury testimony—precise, deliberate, and revealing absolutely nothing. A masterpiece of selective memory where every commit tells exactly the story you want told, no more, no less. 🤐⚖️&lt;/p&gt;
+
+&lt;p&gt;Here’s the good news: you’ve got a couple of tricks up your sleeve to make it all disappear. Enter git commit –amend and git rebase. These are your concrete shoes for bad commits, letting you rewrite history like a true pro. Forget those messy mistakes ever happened, and make sure your commit log is as clean as a freshly laundered stack of cash.&lt;/p&gt;
+
+&lt;p&gt;In this article, we’ll break down how to use these powerful Git commands to bury your slip-ups and keep your history looking spotless. Because in the world of development, the only thing better than doing it right the first time is making it look like you did.&lt;/p&gt;
+
+&lt;h2 id=&quot;git-amend-the-art-of-disguise&quot;&gt;Git Amend: The Art of Disguise&lt;/h2&gt;
+
+&lt;p&gt;Picture this: you’ve just committed your changes, but something’s off. Maybe you forgot a file or your commit message is as vague as a mobster’s alibi. No worries, &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit --amend&lt;/code&gt; is your go-to fixer. It’s like having a consigliere to clean up your mess.&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git commit &lt;span class=&quot;nt&quot;&gt;--amend&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;With –amend, you can modify your testimony, er… last commit, adding forgotten files or refining your story. It’s the perfect way to keep your history pristine, leaving no trace of your initial blunder.&lt;/p&gt;
+
+&lt;h2 id=&quot;rebase-call-in-the-clean-up-guy&quot;&gt;Rebase: Call in the Clean Up Guy&lt;/h2&gt;
+
+&lt;p&gt;When your commit history starts looking like a crime scene with too many loose ends, it’s time to call in your “clean up guy”—git rebase. This command is your trusted fixer, ready to sweep away the chaos and leave your history spotless.&lt;/p&gt;
+
+&lt;p&gt;To start a rebase:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git rebase &lt;span class=&quot;nt&quot;&gt;-i&lt;/span&gt; HEAD~n  &lt;span class=&quot;c&quot;&gt;# Replace n with the number of commits you want to polish&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;In the interactive rebase screen, you’ll see something like:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;pick 123abc Wack Billy Batts
+pick 456def Go to Tommy&lt;span class=&quot;s1&quot;&gt;&apos;s mom&apos;&lt;/span&gt;s house &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;a shovel and dinner
+pick 789ghi Hang out at the Copa and catch the Bobby Vinton show
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Change &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;pick&lt;/code&gt; to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;squash&lt;/code&gt; (or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;s&lt;/code&gt;) for commits you want to combine:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;squash 123abc Wack Billy Batts
+squash 456def Go to Tommy&lt;span class=&quot;s1&quot;&gt;&apos;s mom&apos;&lt;/span&gt;s house &lt;span class=&quot;k&quot;&gt;for &lt;/span&gt;a shovel and dinner
+pick   789ghi Hang out at the Copa and catch the Bobby Vinton show
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Save, and write your new commit message. Clean as a whistle.&lt;/p&gt;
+
+&lt;h2 id=&quot;merge-squash-the-one-time-clean-sweep&quot;&gt;Merge –squash: The One-Time Clean Sweep&lt;/h2&gt;
+
+&lt;p&gt;Sometimes you’ve got a feature branch that’s messier than a witness protection program. That’s where &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git merge --squash&lt;/code&gt; comes in—it’s like witness relocation for your commits. Instead of bringing all that baggage with you, it takes everything from your feature branch and combines it into one clean, new commit on your target branch.&lt;/p&gt;
+
+&lt;p&gt;If your crew uses GitHub or GitLab for pull requests, you can enable the “Squash and Merge” option right in the UI. Either way, here’s how to do it from the command line:&lt;/p&gt;
+
+&lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;c&quot;&gt;# First, make sure you&apos;re on the branch you want to merge into&lt;/span&gt;
+git checkout main
+
+&lt;span class=&quot;c&quot;&gt;# Then use merge --squash with your feature branch&lt;/span&gt;
+git merge &lt;span class=&quot;nt&quot;&gt;--squash&lt;/span&gt; feature/cement-shoes-payment-system
+
+&lt;span class=&quot;c&quot;&gt;# Now commit the changes with one clean message&lt;/span&gt;
+git commit &lt;span class=&quot;nt&quot;&gt;-m&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;feat: implement cement shoes payment processing&quot;&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;This way, all those little commits—the typos, the debug statements, the “WIP” messages—they all disappear into one pristine commit. It’s like they never happened. Beautiful.&lt;/p&gt;
+
+&lt;h2 id=&quot;pro-tips-for-keeping-it-clean&quot;&gt;Pro Tips for Keeping it Clean&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;&lt;strong&gt;Use Feature Branches&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Always create a new branch for each job (e.g., feature/cement-shoes-payment-system)&lt;/li&gt;
+      &lt;li&gt;Keep your work isolated and avoid committing directly to main or develop branches&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Regularly Rebase Instead of Merging&lt;/strong&gt;
+    &lt;ul&gt;
+      &lt;li&gt;Instead of frequent merge commits, prefer rebasing to keep history linear and clean:
+        &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;git fetch origin
+git rebase origin/main
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;        &lt;/div&gt;
+      &lt;/li&gt;
+      &lt;li&gt;This avoids unnecessary merge commits and keeps the history concise&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Use Meaningful Commit Messages&lt;/strong&gt;
+    &lt;div class=&quot;language-bash highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;feat: Add user authentication
+fix: Resolve API &lt;span class=&quot;nb&quot;&gt;timeout &lt;/span&gt;issue
+refactor: Improve database query performance
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;    &lt;/div&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h2 id=&quot;remember-dead-commits-tell-no-tales&quot;&gt;Remember: Dead Commits Tell No Tales&lt;/h2&gt;
+
+&lt;p&gt;Listen up, and listen good. At the end of the day, your Git history is like your reputation on the streets—you gotta protect it at all costs. With &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit --amend&lt;/code&gt; for those quick fixes, interactive rebase for the deep clean, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git merge --squash&lt;/code&gt; for those messy feature branches, you’ve got all the tools to make sure your indiscretions stay buried deeper than Jimmy Hoffa. Keep your commits clean, your messages meaningful, and your history straight as a razor. Because in this business, a messy Git log is like a loose cannon—it’ll only come back to haunt you. So do yourself a favor: squash those problems, bury those mistakes, and keep your repository looking like you never stepped out of line. Capisce? 🤝💼&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/bury-your-secrets-and-keep-your-git-history-clean/&quot;&gt;Bury Your Secrets and Keep Your Git History Clean&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on January 25, 2025.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Shell Secret: (Re)Use Your Words! Repeat Yourself with the Reverse SheBang]]></title>
+  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/re-use-your-words-repeat-yourself-the-bash-command-line/" />
+  <id>https://www.davekopecek.com/re-use-your-words-repeat-yourself-the-bash-command-line</id>
+  <published>2017-03-21T17:27:13-04:00</published>
+  <updated>2017-03-21T17:27:13-04:00</updated>
+  <author>
+    <name>Dave Kopecek</name>
+    <uri>https://www.davekopecek.com</uri>
+    <email>dave.kopecek@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I &lt;em&gt;love&lt;/em&gt;, &lt;em&gt;Love&lt;/em&gt;, &lt;em&gt;LOVE&lt;/em&gt; it when linux reaches out and hands me a gift. I’ve typed on some form of Bash or Zsh command line pretty much every day for as long as I can remember and somehow this gem slipped by me. Like many beautiful things it’s dead simple and easy to remember. It’s usable just about every day and has an immediate payoff: Fewer keystrokes on the command line and powerful text substituion in scripts. Here goes…&lt;/p&gt;
+
+&lt;h1 id=&quot;behold-the-reverse-shebang-&quot;&gt;Behold, The Reverse Shebang &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;!#&lt;/code&gt;&lt;/h1&gt;
+
+&lt;p&gt;I’ve probably typed a “Shebang”  &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;#!&lt;/code&gt; a gazillion times.  As in &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;#! /bin/bash&lt;/code&gt;.  It’s like typing &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;?php&lt;/code&gt; or &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;&amp;lt;!DOCTYPE html&amp;gt;&lt;/code&gt;. It’s just automatic. It turns out there’s a “reverse shebang” &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;!#&lt;/code&gt; that will let you do something &lt;em&gt;incredibly&lt;/em&gt; useful. Inside a script &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;#!&lt;/code&gt; represents the current command line. You can reference words in the current command line by following it with a number. Like this: &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;!#:1&lt;/code&gt;. Like arrays in Javascript, words on the command line are zero-based so &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;!#:1&lt;/code&gt; will reference the second word on your current command line.&lt;/p&gt;
+
+&lt;p&gt;How can this help you?  Ever move a file with a long filename to an ever deeper directory?  Give this a spin:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ mv my-file-with-a-long-name.pdf /someplace/very/far/away/from/here/!#:1
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you’re sitting in the source file’s directory you get the filename pretty much for free using TAB to autocomplete. Same with the target directory. But not the filename. That’s pure typing drudgery. Until now.&lt;/p&gt;
+
+&lt;p&gt;#SheBang!# Schlimazel!# Hasenpfeffer Incorporated!#&lt;/p&gt;
+
+&lt;p&gt;This chunk of awesome comes from Jason Cannon’s free kindle ebook &lt;a href=&quot;https://www.amazon.com/Bash-Command-Line-Pro-Tips-ebook/dp/B00K53EO3G&quot;&gt;&lt;em&gt;Bash Command Line Pro Tips&lt;/em&gt;&lt;/a&gt;. As Jason points out, in scripts you can combine &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;!#:n&lt;/code&gt; with other goodness to do things like create timestamped files with the original filename like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ cp  mylogfile.txt $(date +%F)-!#:1
+$ ls
+2017-03-21-mylogfile.txt    mylogfile.txt
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Hat tip to Jason for the book. It’s a quick read with a bunch of useful tips.&lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/re-use-your-words-repeat-yourself-the-bash-command-line/&quot;&gt;Shell Secret: (Re)Use Your Words! Repeat Yourself with the Reverse SheBang&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on March 21, 2017.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Bash Your Mac Envy with Ubuntu on Windows]]></title>
+  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/bash-your-mac-envy-ubuntu-on-windows/" />
+  <id>https://www.davekopecek.com/bash-your-mac-envy-ubuntu-on-windows</id>
+  <published>2016-04-12T19:28:52-04:00</published>
+  <updated>2016-04-12T19:28:52-04:00</updated>
+  <author>
+    <name>Dave Kopecek</name>
+    <uri>https://www.davekopecek.com</uri>
+    <email>dave.kopecek@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;When I stumbled on Dustin Kurkland’s blog post &lt;a href=&quot;http://blog.dustinkirkland.com/2016/03/ubuntu-on-windows.html&quot;&gt;Ubuntu on Windows – The Ubuntu Userspace for Windows Developers&lt;/a&gt; on March 31st I really thought I had found the setup for an elaborate April Fool’s day prank. An Ubuntu user space inside of windows? Crazy Talk.&lt;/p&gt;
+
+&lt;h2 id=&quot;windows-bourne-again&quot;&gt;Windows Bourne Again&lt;/h2&gt;
+
+&lt;p&gt;I spent the last week of March wrestling with various versions Cygwin &amp;amp; Git Bash that accumulated on my Windows 10 system. Scripts that worked in one didn’t work in another. An evening spent with &lt;a href=&quot;https://github.com/rix0rrr&quot;&gt;rix0rrr&lt;/a&gt;’s’ fantastic &lt;a href=&quot;https://rix0rrr.github.io/WindowsPathEditor/&quot;&gt;Windows Path Editor&lt;/a&gt; was time well spent, I had a “good enough” solution but I was still left feeling burned. I have simple needs. Just let me drop into a good old Bash shell, get my work done and I’ll be on my way. The cool kids with the shiny Macs can do it. Why, Windows? Why can’t I?&lt;/p&gt;
+
+&lt;p&gt;##He Clicked on &lt;a href=&quot;https://blogs.windows.com/windowsexperience/2016/04/06/announcing-windows-10-insider-preview-build-14316/&quot;&gt;Preview Build 14316&lt;/a&gt; and You’ll Never Guess What Happened Next !!&lt;/p&gt;
+
+&lt;p&gt;And then there were more rumblings. No, Dustin hadn’t set us all up with a cruel joke. &lt;em&gt;From the mouth of &lt;a href=&quot;https://blogs.windows.com/windowsexperience/2016/04/06/announcing-windows-10-insider-preview-build-14316/&quot;&gt;Microsoft itself&lt;/a&gt; on April 6, 2016:&lt;/em&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;Today we are releasing Windows 10 Insider Preview Build 14316 to Windows Insiders in the Fast ring…&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;blockquote&gt;
+  &lt;blockquote&gt;
+    &lt;p&gt;Here’s what’s new in Build 14316
+Run native Bash on Ubuntu on Windows: In this build, you can natively run Bash in Windows as announced last week at Build 2016.&lt;/p&gt;
+  &lt;/blockquote&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Game On! I had enrolled in &lt;a href=&quot;https://insider.windows.com/&quot;&gt;Microsoft’s Insider Program&lt;/a&gt; pre-Windows 10. Golden ticket in hand I fired up to the old machine in the attic, installed about a bazillion updates and finally got Build 14316. A little more googling revealed the need to visit the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Turn Windows Features on or off&lt;/code&gt; to enable the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;Windows Subsystem for Linux(Beta)&lt;/code&gt; option. A reboot later and:&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;a href=&quot;/images/bash-1.jpg&quot;&gt;&lt;img src=&quot;/images/bash-1.jpg&quot; /&gt;&lt;/a&gt;
+  &lt;figcaption&gt;&lt;a href=&quot;bash-1.jpg&quot; title=&quot;Entered `bash` from CMD prompt to install&quot;&gt;Entered &apos;bash&apos; from CMD prompt to install&lt;/a&gt;.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+  &lt;a href=&quot;/images/bash-2-git-install.jpg&quot;&gt;&lt;img src=&quot;/images/bash-2-git-install.jpg&quot; /&gt;&lt;/a&gt;
+  &lt;figcaption&gt;&lt;a href=&quot;bash-2-git-install.jpg&quot; title=&quot;Packages!! Ima Git me some&quot;&gt;Packages!! Ima Git me some&lt;/a&gt;.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;h2 id=&quot;better-than-lickable-wallpaper&quot;&gt;Better than Lickable Wallpaper&lt;/h2&gt;
+&lt;figure&gt;
+  &lt;a href=&quot;http://45.media.tumblr.com/34ad7e4990a285be2019330be88171c6/tumblr_mtjrtyUJ1E1s0teago4_400.gif&quot;&gt;&lt;img src=&quot;http://45.media.tumblr.com/34ad7e4990a285be2019330be88171c6/tumblr_mtjrtyUJ1E1s0teago4_400.gif&quot; /&gt;&lt;/a&gt;
+  &lt;figcaption&gt;&lt;a href=&quot;http://45.media.tumblr.com/34ad7e4990a285be2019330be88171c6/tumblr_mtjrtyUJ1E1s0teago4_400.gif&quot; title=&quot;Listen to the man.&quot;&gt;&lt;/a&gt;.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;figure&gt;
+  &lt;a href=&quot;/images/bash-5-lsb-release-a.jpg&quot;&gt;&lt;img src=&quot;/images/bash-5-lsb-release-a.jpg&quot; /&gt;&lt;/a&gt;
+  &lt;figcaption&gt;&lt;a href=&quot;/images/bash-5-lsb-release-a.jpg&quot; title=&quot;Looks like Trusty&quot;&gt;Looks like Trusty&lt;/a&gt;.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;You get the idea. I feel my Mac envy fading.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-no-sprinkles&quot;&gt;What? No Sprinkles?&lt;/h2&gt;
+
+&lt;p&gt;Damn it. I just &lt;em&gt;had&lt;/em&gt; to push the envlope. Had to. Tried &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;sudo apt-get install docker-engine&lt;/code&gt; and no dice. It seems with all the Azure / Docker buzz floating around this might a very cool thing for Redmond to get all over. I am never satisfied. Well, maybe for a little while.&lt;/p&gt;
+
+&lt;figure&gt;
+  &lt;a href=&quot;/images/docker-install-errors.jpg&quot;&gt;&lt;img src=&quot;/images/docker-install-errors.jpg&quot; /&gt;&lt;/a&gt;
+  &lt;figcaption&gt;&lt;a href=&quot;/images/docker-install-errors.jpg&quot; title=&quot;No Docker Love&quot;&gt;No Docker, But I&apos;m still loving this&lt;/a&gt;.&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/bash-your-mac-envy-ubuntu-on-windows/&quot;&gt;Bash Your Mac Envy with Ubuntu on Windows&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on April 12, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Beat Bad WIFI With the Linux Screen Command]]></title>
+  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/beat-bad-wifi-with-the-linux-screen-command/" />
+  <id>https://www.davekopecek.com/beat-bad-wifi-with-the-linux-screen-command</id>
+  <published>2016-04-10T20:10:01-04:00</published>
+  <updated>2016-04-10T20:10:01-04:00</updated>
+  <author>
+    <name>Dave Kopecek</name>
+    <uri>https://www.davekopecek.com</uri>
+    <email>dave.kopecek@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Nothing makes you crankier than a flakey WIFI connection, right?  What good is being able to work from anywhere you want if you can’t work from anywhere you want? I can’t fix your WIFI connection, but if your work  takes you to the Linux command line I suggest you check out the &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;screen&lt;/code&gt; command.&lt;/p&gt;
+
+&lt;h2 id=&quot;tldr&quot;&gt;TL;DR&lt;/h2&gt;
+
+&lt;p&gt;Screen lets you toggle between terminal screens or windows from a single ssh session. Drop your connection?  No Problem. Log back in and re-attached (&lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;screen -r&lt;/code&gt;) to your running screen.&lt;/p&gt;
+
+&lt;p&gt;Screen is also just the ticket for long running processes. Pop into a screen, start the process, detach, log off and go get coffee. It’ll be there when you get back.&lt;/p&gt;
+
+&lt;h3 id=&quot;quick-and-dirty&quot;&gt;Quick And Dirty&lt;/h3&gt;
+
+&lt;p&gt;Install with:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[root@machine ~] yum install screen
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Screen Basics: Make / Switch / Detach / Re-Attach&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[root@machine ~] screen
+[root@machine ~] &quot;ctrl-a&quot; &quot;c&quot;  // make a new screen
+[root@machine ~] &quot;ctrl-a&quot; &quot;n&quot;  // switch to next screen
+[root@machine ~] &quot;ctrl-a&quot; &quot;d&quot;  // detach from screen on purpose
+... or your connection drops...
+[root@machine ~] screen -r     // reattach your screen
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;If you have many screens &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;screen -r&lt;/code&gt; may give you a list. Reattach to your favorite like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;[root@machine~] screen -r 12345.pts-0.machine
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;h2 id=&quot;screen-tutorial&quot;&gt;Screen Tutorial&lt;/h2&gt;
+
+&lt;p&gt;Here’s fantactic tutorial appropriately titled &lt;a href=&quot;https://www.rackaid.com/blog/linux-screen-tutorial-and-how-to/&quot;&gt;How To Use Linux Screen&lt;/a&gt;. If you’re new to &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;screen&lt;/code&gt; scroll down to the bottom and check out the video first. You’ll be up to speed in no time.&lt;/p&gt;
+
+&lt;p&gt;I use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;screen&lt;/code&gt; all the time, but if you google &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;top linux commands&lt;/code&gt; it rarely makes the listicle hit parade. Is there some other command all the cool kids are using? Why? Bueller? Bueller?&lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/beat-bad-wifi-with-the-linux-screen-command/&quot;&gt;Beat Bad WIFI With the Linux Screen Command&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on April 10, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[CloudFlare Command Line Cache Clear]]></title>
+  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/cloudflare-command-line-cache-clear/" />
+  <id>https://www.davekopecek.com/cloudflare-command-line-cache-clear</id>
+  <published>2016-04-03T13:00:33-04:00</published>
+  <updated>2016-04-03T13:00:33-04:00</updated>
+  <author>
+    <name>Dave Kopecek</name>
+    <uri>https://www.davekopecek.com</uri>
+    <email>dave.kopecek@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Here’ a quick and dirty way to refresh a site’s &lt;a href=&quot;https://www.cloudflare.com&quot;&gt;Cloudflare&lt;/a&gt; CDN cache from the command line. For large or high volume sites you would probably want to purge individual files or purge by tag but for deploying a small blog it’s just fine &amp;amp; can be added to the end of your deployment script. It doesn’t get much simpler that this. A command line curl call to:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;DELETE https://api.cloudflare.com/client/v4/zones/:identifier/purge_cache
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;with a few added parameters gets you what you need. The API is even available on free accounts. No verifications or other shenanigans are required.&lt;/p&gt;
+
+&lt;p&gt;Cloudflare does a damn fine job with their API. Not only is it &lt;a href=&quot;https://api.cloudflare.com/&quot;&gt;fully documented&lt;/a&gt;, but there are links on their “regular” web interface to the corresponding API calls.  It only took me two trips to clear the cache on the web interface before I saw the API link and had the, “Hey wait, I can do this from the command prompt” aha moment.&lt;/p&gt;
+
+&lt;h2 id=&quot;you-need&quot;&gt;You Need&lt;/h2&gt;
+&lt;ul&gt;
+  &lt;li&gt;Your “Global API Key”&lt;/li&gt;
+  &lt;li&gt;Your domain’s Cloudflare zone id&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;get-your-global-api-key&quot;&gt;Get Your “Global API Key”&lt;/h3&gt;
+&lt;p&gt;The “Global API Key” is on your “My Settings” page toward the bottom of the “Account” tab. Click the dropdown next to your email address in the header to navigate to “My Settings”.&lt;/p&gt;
+
+&lt;h3 id=&quot;get-your-domains-cloudlare-zone-id&quot;&gt;Get Your Domain’s Cloudlare Zone Id&lt;/h3&gt;
+
+&lt;p&gt;Replace your domain name, email address and global API key from above ( X-Auth-Key) below. Grap the zone id out of the returned JSON and save it for the next step.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ curl -X GET &quot;https://api.cloudflare.com/client/v4/zones?name=example.com&amp;amp;status=active&amp;amp;page=1&amp;amp;per_page=20&amp;amp;order=status&amp;amp;direction=desc&amp;amp;match=all&quot; \
+-H &quot;X-Auth-Email: user@example.com&quot; \
+-H &quot;X-Auth-Key: c2547eb745079dac9320b638f5e225cf483cc5cfdda41&quot; \
+-H &quot;Content-Type: application/json&quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Cloudflare documentation &lt;a href=&quot;https://www.cloudflare.com/docs/next/#zone-list-zones&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;clear-your-cache&quot;&gt;Clear Your Cache.&lt;/h3&gt;
+
+&lt;p&gt;Paste your newly found :identifier, email and key &amp;amp; you’re set.&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;curl -X DELETE &quot;https://api.cloudflare.com/client/v4/zones/:identifier/purge_cache&quot; \
+-H &quot;Content-Type:application/json&quot; \
+-H &quot;X-Auth-Key:1234567893feefc5f0q5000bfo0c38d90bbeb&quot; \
+-H &quot;X-Auth-Email:example@example.com&quot;
+--data &apos;{&quot;purge_everything&quot;:true}&apos;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Cloudflare documentation &lt;a href=&quot;https://api.cloudflare.com/#zone-purge-all-files&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;winner-winner&quot;&gt;Winner Winner&lt;/h3&gt;
+
+&lt;p&gt;That’s It! Add that puppy to the end of your deployment script. Go Crazy. Not too crazy – you’re supposed to treat your API key like a password, but you get the point.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/cloudflare-command-line-cache-clear/&quot;&gt;CloudFlare Command Line Cache Clear&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on April 03, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Things I Wish I Knew Yesterday About Jekyll on Windows]]></title>
+  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/things-i-wish-i-knew-yesterday-about-jekyll/" />
+  <id>https://www.davekopecek.com/things-i-wish-i-knew-yesterday-about-jekyll</id>
+  <published>2016-04-03T13:00:33-04:00</published>
+  <updated>2016-04-03T13:00:33-04:00</updated>
+  <author>
+    <name>Dave Kopecek</name>
+    <uri>https://www.davekopecek.com</uri>
+    <email>dave.kopecek@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Trying to get &lt;a href=&quot;https://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt; and &lt;a href=&quot;https://github.com/mmistakes/minimal-mistakes&quot;&gt;Minimal Mistakes&lt;/a&gt; running on Windows 10 dev environment? Got an error that looks like this:&lt;/p&gt;
+
+&lt;div class=&quot;language-plaintext highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;SSL_connect returned=1 errno=0 state=SSLv3 read server certificate B: certificate verify failed
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Take a look at my &lt;a href=&quot;https://bitbucket.org/davekopecek/davekopecek.com&quot;&gt;README&lt;/a&gt; on Bitbucket.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/things-i-wish-i-knew-yesterday-about-jekyll/&quot;&gt;Things I Wish I Knew Yesterday About Jekyll on Windows&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on April 03, 2016.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Resurect Dead]]></title>
+  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/resurect-dead/" />
+  <id>https://www.davekopecek.com/resurect-dead</id>
+  <published>2015-07-20T00:00:00-04:00</published>
+  <updated>2015-07-20T00:00:00-04:00</updated>
+  <author>
+    <name>Dave Kopecek</name>
+    <uri>https://www.davekopecek.com</uri>
+    <email>dave.kopecek@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;For years I’ve tried to impress upon clients my &lt;em&gt;reverse field of dreams™&lt;/em&gt; theory of site deployment. Everyone views their site launch with great excitement, but really:&lt;/p&gt;
+
+&lt;p&gt;##If you build it, no one cares.&lt;/p&gt;
+
+&lt;p&gt;Such was the case with my little fledgling blog. It’s possible that it got the least traffic of any blog ever created. But I didn’t care. It was built as an experiment. I had a conference to go to and wanted to see if I could get a site while stuck in an airport with a technology I knew nothing about.  ( I could )  I wanted to see if I could get something useful and not ugly out the door with &lt;a href=&quot;http://jekyllrb.com/&quot;&gt;Jekyll&lt;/a&gt;. ( It’s possible ) Life was good. A new technology was discovered and briefly evangelized, and then deadlines and other shiny things came into view.  Somehow or other I forgot which development VM I used to build my little experiment. The dev machine was lost and the little blog was orphaned. And so it sat…&lt;/p&gt;
+
+&lt;h2 id=&quot;here-we-go-again&quot;&gt;Here we go again&lt;/h2&gt;
+
+&lt;p&gt;And so my little field of dreams is reborn. I’m looking for light weight, low overhead ways to get ideas out quickly. Lets see what we can make Jekyll do this time.  This time I care. Just a tiny bit.&lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/resurect-dead/&quot;&gt;Resurect Dead&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on July 20, 2015.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Where My WordPress At?]]></title>
+  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/where-my-wordpress-at/" />
+  <id>https://www.davekopecek.com/articles/where-my-wordpress-at</id>
+  <published>2010-12-15T00:00:00-05:00</published>
+  <updated>2010-12-15T00:00:00-05:00</updated>
+  <author>
+    <name>Dave Kopecek</name>
+    <uri>https://www.davekopecek.com</uri>
+    <email>dave.kopecek@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Wordpress installs multiply like bunnies.  If you’ve got several WordPress domains hosted on a single server it’s easy to loose track of installed versions.  This one-line wonder will sniff out WordPress powered sites and grab their version number.  Drop it in a CRON that runs once a month and you’ll get regular reminders of what’s lurking out on your server.&lt;/p&gt;
+
+&lt;p&gt;WordPress installs contain the file version.php with the variable $wp_version. Find all the version.php files, grab the variable and you’re golden. Here’s the basic &lt;strong&gt;locate&lt;/strong&gt; command:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;locate /wp-includes/version.php | xargs &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;$wp_version =&apos;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;That’s nice enough, but we can get a bit better. The server I’m targeting stores all virtual hosts in the directory &lt;strong&gt;/var/www/vhosts&lt;/strong&gt;. We can use the cut command to snip that from the display, sort the output by domain name and email the results.&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;locate /wp-includes/version.php | xargs &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;$wp_version =&apos;&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;cut&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-d&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;/&apos;&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f5&lt;/span&gt;,6,7,8,10  | &lt;span class=&quot;nb&quot;&gt;sort&lt;/span&gt; | mail &lt;span class=&quot;nt&quot;&gt;-s&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;WordPress Installs on Server XYZ&quot;&lt;/span&gt; your-email@yourdomain.com&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;You’ll get an email with results like this:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;foobar.com/version.php:&lt;span class=&quot;nv&quot;&gt;$wp_version&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;3.0.1&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+whatsit.com/version.php:&lt;span class=&quot;nv&quot;&gt;$wp_version&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;2.7.1&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+whizzbang.com/version.php:&lt;span class=&quot;nv&quot;&gt;$wp_version&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;2.9.1&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+widget.net/wp-includes/version.php:&lt;span class=&quot;nv&quot;&gt;$wp_version&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;2.9.1&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;For extra credit you could sort by version number, but there’s no need to be an overachiever here.  Quit while you’re ahead. The script uses &lt;em&gt;&lt;strong&gt;locate&lt;/strong&gt;&lt;/em&gt;, so make sure you run &lt;em&gt;&lt;strong&gt;updatedb&lt;/strong&gt;&lt;/em&gt; periodically.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/where-my-wordpress-at/&quot;&gt;Where My WordPress At?&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on December 15, 2010.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Harvest - Simplified Time and Billing]]></title>
+  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/harvest-simplified-time-and-billing/" />
+  <id>https://www.davekopecek.com/articles/harvest-simplified-time-and-billing</id>
+  <published>2010-11-14T00:00:00-05:00</published>
+  <updated>2010-11-14T00:00:00-05:00</updated>
+  <author>
+    <name>Dave Kopecek</name>
+    <uri>https://www.davekopecek.com</uri>
+    <email>dave.kopecek@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Ok, I’ve been using &lt;a href=&quot;http://www.sagetimeslips.com/&quot;&gt;TimeSlips&lt;/a&gt; for project based billing since the DOS days before the web existed and we’ve always had a love-hate relationship.   Actually usually it was usually hate-hate.  The interface felt clunky. Even after 15 years of use there were things I could never remember how to do.   Maybe it’s me, you say?  Well Barb hated it with a passion as well.   Back when LineSight, Inc. was using &lt;a href=&quot;http://www.timeslips.com/products_and_services/add-on_products/timeslips_remote/&quot;&gt;TimeSlips Remote&lt;/a&gt; it caused us a never ending stream of pain, but we couldn’t find anything better.  We dropped TSRemote for the desktop version,  but billing day never rose to the happy day it should be.&lt;/p&gt;
+
+&lt;p&gt;I just got a new machine and vowed not to defile its pristine drive with the dreaded TimeSlips. The hunt was on.  We weren’t asking for much:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;A Simple, clean interface.&lt;/li&gt;
+  &lt;li&gt;The ability to define clients, projects and timekeepers who are either employees or consultants without sitting through training and changing our business model.&lt;/li&gt;
+  &lt;li&gt;The ability to enter time after-the-fact, or in a &quot;meter is running&quot; fashion from whatever device we happen to be on.&lt;/li&gt;
+  &lt;li&gt;The ability to easily see how much un-billed time we have.&lt;/li&gt;
+  &lt;li&gt;The ability to easily create invoices.&lt;/li&gt;
+  &lt;li&gt;We&apos;re cheap.  This needs to FLOSS or pretty darn inexpensive.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A couple of years ago we helped a client with about 120 remote employees select&lt;a href=&quot;http://www.journyx.com/&quot;&gt; Journyx&lt;/a&gt;, but that was also far to complicated for our needs.  Same for &lt;a href=&quot;http://www.replicon.com/&quot;&gt;Replicon&lt;/a&gt;.  We did a quick survey of the FLOSS options available and churned through the &lt;a href=&quot;http://en.wikipedia.org/wiki/Comparison_of_time_tracking_software&quot;&gt;Wikipedia comparison &lt;/a&gt;chart.&lt;/p&gt;
+
+&lt;p&gt;Ultimately we stumbled on &lt;a href=&quot;http://www.getharvest.com/&quot;&gt;Harvest.&lt;/a&gt; It seems to fit the bill perfectly. Within about 1o minutes we had all of our clients, active projects, tasks, and timekeepers entered.  Ok, Barb is going to  go back and cut-and-paste client addresses, but really we’re good to go.&lt;/p&gt;
+
+&lt;p&gt;We both installed  Windows 7 desktop widget installed and Voila !  We’re in business &amp;amp; all set on our 30 day trial.   More as the trial progresses…&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/harvest-simplified-time-and-billing/&quot;&gt;Harvest - Simplified Time and Billing&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on November 14, 2010.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Kindle for Android is a Keeper]]></title>
+  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/kindle-for-android-is-a-keeper/" />
+  <id>https://www.davekopecek.com/articles/kindle-for-android-is-a-keeper</id>
+  <published>2010-07-29T00:00:00-04:00</published>
+  <updated>2010-07-29T00:00:00-04:00</updated>
+  <author>
+    <name>Dave Kopecek</name>
+    <uri>https://www.davekopecek.com</uri>
+    <email>dave.kopecek@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;figure&gt;
+&lt;img src=&quot;/images/redding-qrcode._V189848585_.png&quot; alt=&quot;Download Android for Kindle&quot; title=&quot;Download Android for Kindle&quot; /&gt;
+  &lt;figcaption&gt;Download Android for Kindle&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;The Kindle has been gathering dust since I got my HTC Incredible.  For the most part I had been using the Kindle as a News feed reader. It made no sense to shell over subscription fees to Amazon to read news feeds when Google Reader on the Incredible gave me more flexibility with zero cost.  I still love the Kindle, the screen is a nice break from the laptop screen, and it’s easier to cart around than a stack of books, but the Incredible is always in my pocket and access to all my Kindle stuff will be great.&lt;/p&gt;
+
+&lt;p&gt;Ok Amazon, listen up. I see your list of &lt;a href=&quot;http://www.amazon.com/gp/feature.html?ie=UTF8&amp;amp;docId=1000517401&quot;&gt;future improvements&lt;/a&gt;.  You need to add “Share” to this list.   I want to be able to highlight some text, hit share (just like I can in LOTS of other apps) and send it via email or post it on Facebook or twitter.  If that’s in there now, I can’t find it.  If it’s not, it should be.  If you let folks send little quotes to people with a “check this out” note, YOU’LL SELL MORE BOOKS.  I promise.  Make it so. Please.&lt;/p&gt;
+
+
+    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/kindle-for-android-is-a-keeper/&quot;&gt;Kindle for Android is a Keeper&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on July 29, 2010.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[It's Incredibe]]></title>
+  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/its-incredible/" />
+  <id>https://www.davekopecek.com/articles/its-incredible</id>
+  <published>2010-04-30T00:00:00-04:00</published>
+  <updated>2010-04-30T00:00:00-04:00</updated>
+  <author>
+    <name>Dave Kopecek</name>
+    <uri>https://www.davekopecek.com</uri>
+    <email>dave.kopecek@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Day 2 with the HTC Incredible. This phone is amazing. I’m talking it it’s typing. I’ve logged on to my servers, updated my facebook page and even made a few calls. Still trying to find a latte app, I’m sure it out there.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/its-incredible/&quot;&gt;It&apos;s Incredibe&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on April 30, 2010.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Ubercart Credit Card Settings on Plesk Hosted Site - Setting up /keys]]></title>
+  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/ubercart-credit-card-settings-on-plesk-hosted-site-setting-up-keys/" />
+  <id>https://www.davekopecek.com/articles/ubercart-credit-card-settings-on-plesk-hosted-site-setting-up-keys</id>
+  <published>2009-09-12T00:00:00-04:00</published>
+  <updated>2009-09-12T00:00:00-04:00</updated>
+  <author>
+    <name>Dave Kopecek</name>
+    <uri>https://www.davekopecek.com</uri>
+    <email>dave.kopecek@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;&lt;a title=&quot;Ubercart - One cart to rule them all!&quot; href=&quot;http://ubercart.org&quot; target=&quot;_blank&quot;&gt;Ubercart&lt;/a&gt; is a a popular shopping cart plug-in for the popular &lt;a title=&quot;Drupal.org&quot; href=&quot;http://drupal.org&quot; target=&quot;_blank&quot;&gt;Drupal&lt;/a&gt; Content Management system. &lt;a title=&quot;Parallels Plesk&quot; href=&quot;http://www.parallels.com/spp/parallelsplesk/&quot; target=&quot;_blank&quot;&gt;Parallel’s Plesk&lt;/a&gt; is a popular hosting control panel.&lt;/p&gt;
+
+&lt;p&gt;When configuring a Drupal-Ubercart install on a Plesk based host &lt;a title=&quot;Ubercart Credit Card Setup Documentation Page&quot; href=&quot;http://www.ubercart.org/docs/user/2731/credit_card_settings&quot; target=&quot;_blank&quot;&gt;Ubercart requires&lt;/a&gt; the creation of a /keys directory that is outside of your document root (aka /httpdocs in Plesk )  To create a keys directory that does not generate open_basedir errors you’ll need to do the following&lt;/p&gt;
+
+&lt;p&gt;Log in as root and create or edit conf/vhost.conf and conf/vhost_ssl.conf as shown.&lt;/p&gt;
+
+&lt;p&gt;###conf/vhost.conf:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;Directory&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;www&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;vhosts&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;YOUR-DOMAIN.COM&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;httpdocs&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+php_admin_value open_basedir &quot;/var/www/vhosts/YOUR-DOMAIN.COM/httpdocs:/tmp:/var/www/vhosts/YOUR-DOMAIN.COM/keys&quot;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/Directory&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;###conf/vhost_ssl.conf:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-html&quot; data-lang=&quot;html&quot;&gt;&lt;span class=&quot;nt&quot;&gt;&amp;lt;Directory&lt;/span&gt; &lt;span class=&quot;err&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;var&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;www&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;vhosts&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;YOUR-DOMAIN.COM&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;httpdocs&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;/&amp;gt;&lt;/span&gt;
+php_admin_value open_basedir &quot;/var/www/vhosts/YOUR-DOMAIN.COM/httpdocs:/tmp:/var/www/vhosts/YOUR-DOMAIN-HERE.COM/keys&quot;&lt;span class=&quot;nt&quot;&gt;&amp;lt;&lt;/span&gt;
+&lt;span class=&quot;err&quot;&gt;&amp;lt;/&lt;/span&gt;&lt;span class=&quot;na&quot;&gt;Directory&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Note that Php_admin_value and all that follows should be on one line.&lt;/p&gt;
+
+&lt;p&gt;Then run (on CentOS - Ubuntu/Debian may be slightly different):&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;/usr/local/psa/admin/sbin/websrvmng &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;--vhost-name&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&amp;lt;domainname&amp;gt;
+/etc/init.d/apache2 restart&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;After the restart Plesk will include the contents of your file in the apache config file. You can verify that it’s being included by checking httpd.include you should see a line similiar to:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;Include /var/www/vhosts/mydomain.com/conf/vhost.conf&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Feeling adventurous and want to add other apache directives in the .conf file ?   Great, but HEED MY WARNING.  If you mess up the syntax in either of the files apache may fail to restart – That would be why you needed to log in as root.   Delete-Remove-Rename the .conf files, rerun websrvmng and start apache.  No big deal if you’re on a development box, but, as always you would be wise to follow the 2-Beer rule when logging into production boxes as root.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Resources:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Ubercart Keys Documentation Page:
+&lt;a href=&quot;http://www.ubercart.org/docs/user/2731/credit_card_settings&quot;&gt;http://www.ubercart.org/docs/user/2731/credit_card_settings&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Plesk forum and Knowledgebase posts:
+&lt;a href=&quot;http://forum.parallels.com/showthread.php?t=84211&amp;amp;highlight=vhost.conf+websrvmng&quot;&gt;http://forum.parallels.com/showthread.php?t=84211&amp;amp;highlight=vhost.conf+websrvmng&lt;/a&gt;
+&lt;a href=&quot;http://kb.parallels.com/en/5464&quot;&gt;http://kb.parallels.com/en/5464&lt;/a&gt;
+&lt;a href=&quot;http://kb.parallels.com/en/432&quot;&gt;http://kb.parallels.com/en/432&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;You may want to check out Power Toys for Plesk from grafxsoftware.com &lt;a href=&quot;http://www.grafxsoftware.com/product.php?id=172&quot;&gt;http://www.grafxsoftware.com/product.php?id=172&lt;/a&gt; which includes a vhost conf editing tool.&lt;/p&gt;
+
+&lt;p&gt;Of course you can avoid all this by having Aisle8, Inc. host your Drupal, Ubercart or &lt;a title=&quot;Open Atrium&quot; href=&quot;http://openatrium.com&quot; target=&quot;_blank&quot;&gt;OpenAtrium&lt;/a&gt; site.  We can host it on a Plesk based server, or one of our trusty &lt;a href=&quot;http://groups.drupal.org/aegir-hosting-system&quot; target=&quot;_blank&quot;&gt;Aegir&lt;/a&gt; based boxes.  Aegir eases the hosting and upgrading Drupal sites —   Ain’t nothing else like it around.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/ubercart-credit-card-settings-on-plesk-hosted-site-setting-up-keys/&quot;&gt;Ubercart Credit Card Settings on Plesk Hosted Site - Setting up /keys&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on September 12, 2009.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Whitelisting domains in gmail]]></title>
+  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/whitelisting-domains-in-gmail/" />
+  <id>https://www.davekopecek.com/articles/whitelisting-domains-in-gmail</id>
+  <published>2009-01-06T00:00:00-05:00</published>
+  <updated>2009-01-06T00:00:00-05:00</updated>
+  <author>
+    <name>Dave Kopecek</name>
+    <uri>https://www.davekopecek.com</uri>
+    <email>dave.kopecek@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;For the past year or so I’ve been managing all my various email addresses from gmail.  It’s been working well until a week before Christmas when the gmail’s spam filter decided that all of the voice mails forwarded from our office VOIP system were spam.  The system forwards me voicemails in the format&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;s2&quot;&gt;&quot;john.doe 333-444-5555&quot;&lt;/span&gt;@myvoicemailsystem.com&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;so I needed to whitelist the entire domain.&lt;/p&gt;
+
+&lt;p&gt;While gmail doesn’t have a specific “whitelist” feature, turns out this is pretty easily accomplished with “filters”.  Here’s how:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Log into gmail, click &apos;settings&apos;&lt;/li&gt;
+  &lt;li&gt;Click &apos;Filters&apos;&lt;/li&gt;
+  &lt;li&gt;Click &apos;Create a New Filter&apos;&lt;/li&gt;
+  &lt;li&gt;In the &quot;From&quot; field enter the domain you want to whitelist, ie. &apos;somedomain.com&apos;&lt;/li&gt;
+  &lt;li&gt;Click &apos;Next Step&apos;, then tick the &apos;Never send it to Spam&apos; box.&lt;/li&gt;
+  &lt;li&gt;Click &apos;Create Filter&apos; and your done.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;That wasn’t so bad. Anything sent from ‘somedomain.com’ now show up in your inbox rather than disappearing onto the great SPAM abyss.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/whitelisting-domains-in-gmail/&quot;&gt;Whitelisting domains in gmail&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on January 06, 2009.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Listing Domains Managed on a Plesk Server]]></title>
+  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/listing-domains-managed-on-a-plesk-server/" />
+  <id>https://www.davekopecek.com/articles/listing-domains-managed-on-a-plesk-server</id>
+  <published>2008-12-19T00:00:00-05:00</published>
+  <updated>2008-12-19T00:00:00-05:00</updated>
+  <author>
+    <name>Dave Kopecek</name>
+    <uri>https://www.davekopecek.com</uri>
+    <email>dave.kopecek@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I’ve learned the hard way that while directly altering Plesk’s database is almost never a good idea, the Plesk database ‘PSA’ holds a ton of useful information that’s not always readily exportable from the interface.  Here are a couple of useful queries.  The first simply exports a list of “standard hosted” domains.  The second includes client information.&lt;/p&gt;
+
+&lt;p&gt;You’ll need to be logged in as root.&lt;/p&gt;
+
+&lt;p&gt;First, Get into MySQL and use the Plesk database, “psa”:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;n&quot;&gt;mysql&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;u&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;admin&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;p&lt;/span&gt;&lt;span class=&quot;nv&quot;&gt;`cat /etc/psa/.psa.shadow`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;use&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;psa&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Query 1:  List all the standard hosted domains, send the results to a csv file:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;&lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;domains&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;htype&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;vrt_hst&apos;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;INTO&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;OUTFILE&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;/tmp/domains.csv&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;&lt;strong&gt;Query 2:  Building on that, lets add client information and sort it to make it pretty:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;k&quot;&gt;select &lt;/span&gt;cname,name from domains, clients where cl_id &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; clients.id and &lt;span class=&quot;nv&quot;&gt;htype&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;&apos;vrt_hst&apos;&lt;/span&gt; order by cname,name INTO OUTFILE &lt;span class=&quot;s1&quot;&gt;&apos;/tmp/domains-client.csv&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Nothing earth shattering here, but it might save you 5 minutes.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/listing-domains-managed-on-a-plesk-server/&quot;&gt;Listing Domains Managed on a Plesk Server&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on December 19, 2008.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Managing Orphaned Parallels Plesk Mailboxes]]></title>
+  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/managing-orphaned-parallels-plesk-mailboxes/" />
+  <id>https://www.davekopecek.com/articles/managing-orphaned-parallels-plesk-mailboxes</id>
+  <published>2008-09-11T00:00:00-04:00</published>
+  <updated>2008-09-11T00:00:00-04:00</updated>
+  <author>
+    <name>Dave Kopecek</name>
+    <uri>https://www.davekopecek.com</uri>
+    <email>dave.kopecek@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Over the past few months I began to notice a steady erosion in available disk space on a server running the Parallels’ &lt;a href=&quot;http://www.parallels.com/plesk/&quot;&gt;Plesk&lt;/a&gt; control panel.  After some sleuthing I tracked it down to the management of mailboxes in combination with the “Mail Forward” and “Mail Group” functions on domains the “Mailbox quota” set to unlimited.&lt;/p&gt;
+
+&lt;p&gt;There are two basic issues:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;Users setup &apos;redirects&apos; or &apos;mail group&apos; functions and leave the account mailbox enabled, then never check the mailbox and delete the messages.  (e.g. sales@somedomain.com forwards to bill@somedomain.com and jim@gmail.com, but nobody logs on to sales@ and deletes the message)&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;em&gt;Disabling&lt;/em&gt;&lt;/strong&gt; the mailbox does not &lt;strong&gt;&lt;em&gt;delete&lt;/em&gt;&lt;/strong&gt; the existing files in the mailbox.  All those mail files will just hang around forever, orphaned from the control panel.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Slogging around in the qmail directories looking for files is no fun.  Here’s how I rid myself of these pesky disk-eaters.  I took a two pronged approach:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Query the Plesk database to identify mail accounts with mailboxes that redirect.&lt;/li&gt;
+  &lt;li&gt;Query the filesystem to find Mailbox directories that are large.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;###Query the Plesk Database&lt;/p&gt;
+
+&lt;p&gt;You’ll need shell access to your server.  Login to your server, pop into mysql and use the Plesk database (PSA) using the following command:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;    mysql &lt;span class=&quot;nt&quot;&gt;-u&lt;/span&gt; admin &lt;span class=&quot;nt&quot;&gt;-p&lt;/span&gt;&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;cat&lt;/span&gt; /etc/psa/.psa.shadow&lt;span class=&quot;sb&quot;&gt;`&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+    use psa&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Use the following query to select mailboxes that redirect:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-sql&quot; data-lang=&quot;sql&quot;&gt;    &lt;span class=&quot;k&quot;&gt;select&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mail_name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;redir_addr&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;domains&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;where&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mail&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;dom_id&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;domains&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;id&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;postbox&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;true&apos;&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;redirect&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;true&apos;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Now you’ve got some ammunition.  Exit out of mysql.&lt;/p&gt;
+
+&lt;p&gt;###Finding Big Mailboxes&lt;/p&gt;
+
+&lt;p&gt;A ‘mailbox’ in qmail is simply a directory.  Each undelivered message is a file in that directory.  On my  installation of Plesk qmail  is installed in ‘/var/qmail/’   The mailbox for ‘jimbo@somedomain.com’ takes the form: ‘/var/qmail/somedomain.com/jimbo/Maildir/new’.&lt;/p&gt;
+
+&lt;p&gt;The command below uses ‘du’ to grab the size of all the directories in mailnames, grep filters out all but the ‘Maildir/new’ directory leaving us with a list of all our mailboxes and their size.  Running them through sort in the manner shown orders them biggest to smallest.  Just the way we want ‘em.&lt;/p&gt;
+
+&lt;p&gt;Log in as root and run the following:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;du&lt;/span&gt;  /var/qmail/mailnames | &lt;span class=&quot;nb&quot;&gt;grep&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;Maildir/new&apos;&lt;/span&gt; | &lt;span class=&quot;nb&quot;&gt;sort&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-rnk1&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; mboxsize.txt&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Sample Output:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;1047680 /var/qmail/mailnames/somedomain.com/karyon/Maildir/new
+123820  /var/qmail/mailnames/somedomain.com/vickih/Maildir/new
+94156   /var/qmail/mailnames/somedomain.com/info/Maildir/new
+88368   /var/qmail/mailnames/somedomain.com/kathyh/Maildir/new&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;###Delete those Suckers&lt;/p&gt;
+
+&lt;p&gt;Armed with all the mailboxes that forward and a list of the big offenders you wouldn’t think this would need much explanation, but after several weeks or months of collecting files you may find you have to many files in the directory to delete with a simple&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt; &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;*&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-f&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Apparently there are limits to the number of files you can delete at one time with a wildcard. If you run into difficulties with rm give this a shot:&lt;/p&gt;
+
+&lt;p&gt;CD to the directory and run&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;&lt;span class=&quot;nb&quot;&gt;ls&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-al&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Note that the name of your server is a string common to all files, replace MYSERVER below with the common string:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-bash&quot; data-lang=&quot;bash&quot;&gt;find &lt;span class=&quot;nb&quot;&gt;.&lt;/span&gt; &lt;span class=&quot;nt&quot;&gt;-name&lt;/span&gt; &lt;span class=&quot;s1&quot;&gt;&apos;*MYSERVER*&apos;&lt;/span&gt; | xargs &lt;span class=&quot;nb&quot;&gt;rm&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;In your gusto to clean things out remember that there are legitimate reasons to keep a mailbox turned on for forwarded accounts, (The boss may want to be able to review mail sent to sales@ to make sure that leads are being followed up on, etc.) and some users may just get incredible amounts of mail.  With that in mind this should help you keep a lid on things.  Once you’ve got things cleaned out you may be able to use quotas to help the problem from repeating.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/managing-orphaned-parallels-plesk-mailboxes/&quot;&gt;Managing Orphaned Parallels Plesk Mailboxes&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on September 11, 2008.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[Plain. It's the New Fancy]]></title>
+  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/plain-its-the-new-fancy/" />
+  <id>https://www.davekopecek.com/articles/plain-its-the-new-fancy</id>
+  <published>2008-07-13T00:00:00-04:00</published>
+  <updated>2008-07-13T00:00:00-04:00</updated>
+  <author>
+    <name>Dave Kopecek</name>
+    <uri>https://www.davekopecek.com</uri>
+    <email>dave.kopecek@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;figure class=&quot;half&quot;&gt;
+&lt;a href=&quot;/images/pepper.jpg&quot;&gt;&lt;img src=&quot;/images/pepper.jpg&quot; alt=&quot;POP (Plain Old Pepper)&quot; title=&quot;pepper&quot; width=&quot;250&quot; height=&quot;253&quot; class=&quot;alignleft size-full wp-image-40&quot; /&gt;&lt;/a&gt;
+  &lt;figcaption&gt;POP (Plain Old Pepper)&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;For as long as I can remember I&apos;ve spent most of my days solving problems I didn&apos;t know I had when I woke up in the morning.  I&apos;ve also liked pepper.  On Monday, a casual mention of &quot;&lt;a href=&quot;http://www.ubuntu.com/&quot; target=&quot;_blank&quot; title=&quot;ubuntu linux home&quot;&gt;Ubuntu Linux&lt;/a&gt; &quot;  in a magazine sent me off downloading software to burn ISO images (&lt;a href=&quot;http://www.cdburnerxp.se/download.php&quot; target=&quot;_blank&quot; title=&quot;CDBurner XP Pro &quot;&gt;CDBurnerXP Pro&lt;/a&gt; ) so that I could install this great new gift on a PC abandoned by my father.  In my small home office I&apos;m currently running Windows 2000, Win XP, Fedora Core 6, CentOS 4.6, and am usually connected to a CentOs 4.6 machine and a hand full of Win2k servers.   Since Ubuntu Linux is &quot;linux for human beings&quot;, I thought I&apos;d give it a go.  No dice.  Three quarters of the way through the boot process something would hang, and after multiple attempts I gave up, and surrendered a small portion of my humanity.  Along the way I downloaded a new version of &lt;a href=&quot;http://www.bittorrent.com/&quot; target=&quot;_blank&quot; title=&quot;Bittorrent&quot;&gt;bittorrent&lt;/a&gt; , and the latest build of &lt;a href=&quot;http://torrent.fedoraproject.org/&quot; title=&quot;More red hats!! Fedora Core 9&quot;&gt;Fedora Core 9&lt;/a&gt;.  What the heck.&lt;/p&gt;
+
+&lt;p&gt;It&apos;s been dawning on me lately that simple things might actually work better.  I believe the exact moment of this epiphany was when I was trying to build an &lt;a href=&quot;http://www.asterisk.org/&quot; target=&quot;_blank&quot; title=&quot;Asterix - DIY VOIP&quot;&gt;Asterix&lt;/a&gt;  box for the house. Our 2.4GHz cordless phones (or our neighbors) were knocking out the linksys WRT54G wireless routers I have scattered around.  Something called &quot;Asterix @ Home&quot; (now called &lt;a href=&quot;http://asteriskathome.sourceforge.net/&quot; target=&quot;_blank&quot; title=&quot;Trixbox&quot;&gt;trixbox &lt;/a&gt; ) beckoned.  Our home would have it&apos;s own multi-line VOIP server connecting us to the world.  I just needed a Plain old phone to test some wiring.  A trip to &lt;a href=&quot;http://www.mapquest.com/maps/60+Main+St+Delhi+NY+13753-1121/?&quot; target=&quot;_blank&quot; title=&quot;Who in their right mind wants to take a virtual tour a Family Dollar Store??&quot;&gt;Family Dollar&lt;/a&gt;  and $7 later and I had a working phone that sported a callerID display and a bunch of programmable buttons.  That&apos;s when it hit me:  My little family dollar phone had no power supply, no configuring, no patches, no upgrades, and unlike the VOIP box, it got a dial tone.  A miracle, and for less that 10 bucks.  Now I&apos;ve freed up another machine to try to install Ubuntu on. No, wait.&lt;/p&gt;
+
+&lt;p&gt;Our new house has a postage stamp sized lawn.  My move to simplicity really started a a bit over a year ago, a  couple weeks after we moved in.  The grass was growing.  Not wanting to be the scourge of the neighborhood I set out to find a lawnmower. I would also need a gas can.  Since, we don&apos;t have a garage, we&apos;d need a shed to store the mower and the gas can.   There were some very cool shed designs in an old issue of &lt;a href=&quot;http://www.popularmechanics.com/home_journal/home_improvement/1276536.html&quot; target=&quot;blank&quot;&gt;popular mechanics&lt;/a&gt; at the library, but the grass was really getting up there.&lt;/p&gt;
+
+&lt;p&gt;I&apos;m now the proud owner of a 1930&apos;s vintage Montgomery Ward Reel lawnmower.  It&apos;s been lovingly cared for by my 90 year old neighbor since it&apos;s original purchase, and since he has three others he thought $30 was a fair price.  The lawn looks great. It takes about 10 minutes to cut.  The mower fits nicely under the porch wrapped in garbage bags. Spray the blades of a reel mower with Pledge furniture polish, not 10W40 and the grass won&apos;t stick.  It&apos;s simple. It was cheap. It works as well or better that its complicated cousins.&lt;/p&gt;
+
+&lt;p&gt;That brings me back to pepper.  I&apos;ve always loved the stuff.  As a kid I thought it was great when waiters in restaurants would come around with giant pepper grinders. Great fun.  I&apos;ve had a succession of cool looking grinders, all of which disappeared during the move.  A crisis.  Must. Have. Pepper.  This lead to the $1.39 cent purchase of the above picture &quot;Best Yet&quot; pepper.  Amazingly enough, this stuff comes &lt;em&gt;&lt;strong&gt;pre ground&lt;/strong&gt;&lt;/em&gt; !  And ground to a powdery fine wonderful consistency never attained by any of my fancy grinders. And the taste…who knew?  Chicken soup suddenly tastes like Grandma&apos;s.&lt;/p&gt;
+
+&lt;p&gt;I&apos;m sold. Simple is the way it should be.&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/plain-its-the-new-fancy/&quot;&gt;Plain. It&apos;s the New Fancy&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on July 13, 2008.&lt;/p&gt;
+  </content>
+</entry>
+
+
+<entry>
+  <title type="html"><![CDATA[99 Percent Pure and Up]]></title>
+  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/99-percent-pure-and-up/" />
+  <id>https://www.davekopecek.com/articles/99-percent-pure-and-up</id>
+  <published>2008-07-01T00:00:00-04:00</published>
+  <updated>2008-07-01T00:00:00-04:00</updated>
+  <author>
+    <name>Dave Kopecek</name>
+    <uri>https://www.davekopecek.com</uri>
+    <email>dave.kopecek@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;I’d pretty much sworn off Chinese food after a series of run-ins with the super-buffet’s common in the Midwest, and probably elsewhere.  Our eastward move to a teeny tiny town has left us with damn few culinary options.  After nearly a year, I wandered into Ming Moon, a strip mall restaurant squeezed in between the Rite-Aid and a Verizon store, and it was a beautiful thing.&lt;/p&gt;
+
+&lt;figure class=&quot;half&quot;&gt;
+  &lt;img src=&quot;/images/pure-232x300.jpg&quot; /&gt;
+  &lt;img src=&quot;/images/pure-232x300.jpg&quot; /&gt;
+  &lt;figcaption&gt;Two times 99 is &lt;em&gt;really&lt;/em&gt; pure, right?&lt;/figcaption&gt;
+&lt;/figure&gt;
+
+&lt;p&gt;Fast forward six months and I’ve eaten my way through half the menu and, but for the fried dumplings (don’t let them sit for an hour in a truck and then eat 8 of them), I’ve been in moo-shoo, won-ton glory.&lt;/p&gt;
+
+&lt;p&gt;Last week I found their 100lb secret yummy ingredient, sitting right there for all to see. Had I known that all these years it was not &lt;em&gt;&lt;strong&gt;MSG&lt;/strong&gt;&lt;/em&gt; that was making me feel all itchy and odd, but &lt;em&gt;&lt;strong&gt;inferior MSG&lt;/strong&gt;&lt;/em&gt;, oh the time I could have saved. Like bad drugs cut with rat poison, inferior MSG is ruining perfectly good evenings the world over.&lt;/p&gt;
+
+&lt;p&gt;And I’ll bet this is just the beginning…&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/99-percent-pure-and-up/&quot;&gt;99 Percent Pure and Up&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on July 01, 2008.&lt;/p&gt;
+  </content>
+</entry>
+
+</feed>

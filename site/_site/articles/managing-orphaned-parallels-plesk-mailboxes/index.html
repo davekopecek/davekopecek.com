@@ -1,0 +1,289 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>Managing Orphaned Parallels Plesk Mailboxes &#8211; DaveKopecek.com</title>
+<meta name="description" content="Over the past few months I began to notice a steady erosion in available disk space on a server running the Parallels’ Plesk control panel.  After some sleuthing I tracked it down to the management of mailboxes in combination with the “Mail Forward” and “Mail Group” functions on domains the “Mailbox quota” set to unlimited.
+
+">
+<meta name="keywords" content="plesk, qmail">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="Managing Orphaned Parallels Plesk Mailboxes">
+<meta name="twitter:description" content="Over the past few months I began to notice a steady erosion in available disk space on a server running the Parallels’ Plesk control panel.  After some sleuthing I tracked it down to the management of mailboxes in combination with the “Mail Forward” and “Mail Group” functions on domains the “Mailbox quota” set to unlimited.
+
+">
+<meta name="twitter:site" content="@davekopecek">
+<meta name="twitter:creator" content="@davekopecek">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://www.davekopecek.com/images/default-thumb.png">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Managing Orphaned Parallels Plesk Mailboxes">
+<meta property="og:description" content="Over the past few months I began to notice a steady erosion in available disk space on a server running the Parallels’ Plesk control panel.  After some sleuthing I tracked it down to the management of mailboxes in combination with the “Mail Forward” and “Mail Group” functions on domains the “Mailbox quota” set to unlimited.
+
+">
+<meta property="og:url" content="https://www.davekopecek.com/articles/managing-orphaned-parallels-plesk-mailboxes/">
+<meta property="og:site_name" content="DaveKopecek.com">
+
+<meta property="og:image" content="https://www.davekopecek.com/images/default-thumb.png">
+
+
+
+
+
+
+<link rel="canonical" href="https://www.davekopecek.com/articles/managing-orphaned-parallels-plesk-mailboxes/">
+<link href="https://www.davekopecek.com/feed.xml" type="application/atom+xml" rel="alternate" title="DaveKopecek.com Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://www.davekopecek.com/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="https://www.davekopecek.com/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="https://www.davekopecek.com/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="https://www.davekopecek.com/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="https://www.davekopecek.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="https://www.davekopecek.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="https://www.davekopecek.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://www.davekopecek.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.davekopecek.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.davekopecek.com/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="https://www.davekopecek.com/">DaveKopecek.com</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				    <li><a href="https://www.davekopecek.com/about/" >About</a></li>
+				
+				    
+				    <li><a href="https://www.davekopecek.com/posts/" >Posts</a></li>
+				
+				    
+				    <li><a href="http://aisle8.net" target="_blank">Aisle8</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="https://www.davekopecek.com/images/dave-kopecek.jpg" class="bio-photo" alt="Dave Kopecek bio photo">
+
+
+  <h3 itemprop="name">Dave Kopecek</h3>
+  <p>The Blog That Time Forgot.</p>
+  <a href="mailto:dave.kopecek@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  <a href="http://twitter.com/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+  <a href="http://facebook.com/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-facebook-square"></i> Facebook</a>
+  
+  <a href="http://linkedin.com/in/dave-kopecek-054b4618" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  <a href="http://instagram.com/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-instagram"></i> Instagram</a>
+  
+  <a href="http://bitbucket.org/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-bitbucket"></i> BitBucket</a>
+  <a href="http://github.com/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  <a href="http://stackoverflow.com/users/4730908/dave-kopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-stack-overflow"></i> Stackoverflow</a>
+  
+  
+  <a href="http://www.pinterest.com/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-pinterest"></i> Pinterest</a>
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="https://www.davekopecek.com/articles/managing-orphaned-parallels-plesk-mailboxes/" rel="bookmark" title="Managing Orphaned Parallels Plesk Mailboxes">Managing Orphaned Parallels Plesk Mailboxes</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>Over the past few months I began to notice a steady erosion in available disk space on a server running the Parallels’ <a href="http://www.parallels.com/plesk/">Plesk</a> control panel.  After some sleuthing I tracked it down to the management of mailboxes in combination with the “Mail Forward” and “Mail Group” functions on domains the “Mailbox quota” set to unlimited.</p>
+
+<p>There are two basic issues:</p>
+<ol>
+  <li>Users setup 'redirects' or 'mail group' functions and leave the account mailbox enabled, then never check the mailbox and delete the messages.  (e.g. sales@somedomain.com forwards to bill@somedomain.com and jim@gmail.com, but nobody logs on to sales@ and deletes the message)</li>
+  <li><strong><em>Disabling</em></strong> the mailbox does not <strong><em>delete</em></strong> the existing files in the mailbox.  All those mail files will just hang around forever, orphaned from the control panel.</li>
+</ol>
+
+<p>Slogging around in the qmail directories looking for files is no fun.  Here’s how I rid myself of these pesky disk-eaters.  I took a two pronged approach:</p>
+<ul>
+  <li>Query the Plesk database to identify mail accounts with mailboxes that redirect.</li>
+  <li>Query the filesystem to find Mailbox directories that are large.</li>
+</ul>
+
+<p>###Query the Plesk Database</p>
+
+<p>You’ll need shell access to your server.  Login to your server, pop into mysql and use the Plesk database (PSA) using the following command:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">    mysql <span class="nt">-u</span> admin <span class="nt">-p</span><span class="sb">`</span><span class="nb">cat</span> /etc/psa/.psa.shadow<span class="sb">`</span><span class="p">;</span>
+    use psa<span class="p">;</span></code></pre></figure>
+
+<p>Use the following query to select mailboxes that redirect:</p>
+
+<figure class="highlight"><pre><code class="language-sql" data-lang="sql">    <span class="k">select</span> <span class="n">name</span><span class="p">,</span><span class="n">mail_name</span><span class="p">,</span><span class="n">redir_addr</span> <span class="k">from</span> <span class="n">mail</span><span class="p">,</span> <span class="n">domains</span>
+    <span class="k">where</span> <span class="n">mail</span><span class="p">.</span><span class="n">dom_id</span> <span class="o">=</span> <span class="n">domains</span><span class="p">.</span><span class="n">id</span> <span class="k">and</span> <span class="n">postbox</span> <span class="o">=</span> <span class="s1">'true'</span> <span class="k">and</span> <span class="n">redirect</span> <span class="o">=</span> <span class="s1">'true'</span><span class="p">;</span></code></pre></figure>
+
+<p>Now you’ve got some ammunition.  Exit out of mysql.</p>
+
+<p>###Finding Big Mailboxes</p>
+
+<p>A ‘mailbox’ in qmail is simply a directory.  Each undelivered message is a file in that directory.  On my  installation of Plesk qmail  is installed in ‘/var/qmail/’   The mailbox for ‘jimbo@somedomain.com’ takes the form: ‘/var/qmail/somedomain.com/jimbo/Maildir/new’.</p>
+
+<p>The command below uses ‘du’ to grab the size of all the directories in mailnames, grep filters out all but the ‘Maildir/new’ directory leaving us with a list of all our mailboxes and their size.  Running them through sort in the manner shown orders them biggest to smallest.  Just the way we want ‘em.</p>
+
+<p>Log in as root and run the following:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">du</span>  /var/qmail/mailnames | <span class="nb">grep</span> <span class="s1">'Maildir/new'</span> | <span class="nb">sort</span> <span class="nt">-rnk1</span> <span class="o">&gt;</span> mboxsize.txt</code></pre></figure>
+
+<p>Sample Output:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">1047680 /var/qmail/mailnames/somedomain.com/karyon/Maildir/new
+123820  /var/qmail/mailnames/somedomain.com/vickih/Maildir/new
+94156   /var/qmail/mailnames/somedomain.com/info/Maildir/new
+88368   /var/qmail/mailnames/somedomain.com/kathyh/Maildir/new</code></pre></figure>
+
+<p>###Delete those Suckers</p>
+
+<p>Armed with all the mailboxes that forward and a list of the big offenders you wouldn’t think this would need much explanation, but after several weeks or months of collecting files you may find you have to many files in the directory to delete with a simple</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"> <span class="nb">rm</span> <span class="k">*</span> <span class="nt">-f</span></code></pre></figure>
+
+<p>Apparently there are limits to the number of files you can delete at one time with a wildcard. If you run into difficulties with rm give this a shot:</p>
+
+<p>CD to the directory and run</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash"><span class="nb">ls</span> <span class="nt">-al</span></code></pre></figure>
+
+<p>Note that the name of your server is a string common to all files, replace MYSERVER below with the common string:</p>
+
+<figure class="highlight"><pre><code class="language-bash" data-lang="bash">find <span class="nb">.</span> <span class="nt">-name</span> <span class="s1">'*MYSERVER*'</span> | xargs <span class="nb">rm</span></code></pre></figure>
+
+<p>In your gusto to clean things out remember that there are legitimate reasons to keep a mailbox turned on for forwarded accounts, (The boss may want to be able to review mail sent to sales@ to make sure that leads are being followed up on, etc.) and some users may just get incredible amounts of mail.  With that in mind this should help you keep a lid on things.  Once you’ve got things cleaned out you may be able to use quotas to help the problem from repeating.</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <div class="social-share">
+  <h4>Share on</h4>
+  <ul>
+    <li>
+      <a href="https://twitter.com/intent/tweet?text=https://www.davekopecek.com/articles/managing-orphaned-parallels-plesk-mailboxes/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
+    </li>
+    <li>
+      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.davekopecek.com/articles/managing-orphaned-parallels-plesk-mailboxes/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
+    </li>
+    <li>
+      <a href="https://plus.google.com/share?url=https://www.davekopecek.com/articles/managing-orphaned-parallels-plesk-mailboxes/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
+    </li>
+  </ul>
+</div><!-- /.social-share -->
+        <p class="byline"><strong>Managing Orphaned Parallels Plesk Mailboxes</strong> was published on <time datetime="2008-09-11T00:00:00-04:00">September 11, 2008</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="https://www.davekopecek.com/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="https://www.davekopecek.com/articles/bury-your-secrets-and-keep-your-git-history-clean/" title="Bury Your Secrets and Keep Your Git History Clean">Bury Your Secrets and Keep Your Git History Clean</a></li>
+    
+      <li><a href="https://www.davekopecek.com/re-use-your-words-repeat-yourself-the-bash-command-line/" title="Shell Secret: (Re)Use Your Words! Repeat Yourself with the Reverse SheBang">Shell Secret: (Re)Use Your Words! Repeat Yourself with the Reverse SheBang</a></li>
+    
+      <li><a href="https://www.davekopecek.com/bash-your-mac-envy-ubuntu-on-windows/" title="Bash Your Mac Envy with Ubuntu on Windows">Bash Your Mac Envy with Ubuntu on Windows</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2025 Dave Kopecek. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme. <a href="/cheat-sheet">Bonus: Cheat Sheet</a></span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://www.davekopecek.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="https://www.davekopecek.com/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-15854484-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
