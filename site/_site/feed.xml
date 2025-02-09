@@ -2,26 +2,26 @@
 <feed xmlns="http://www.w3.org/2005/Atom" xml:lang="en">
 <title type="text">DaveKopecek.com</title>
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
-<link rel="self" type="application/atom+xml" href="https://www.davekopecek.com/feed.xml" />
-<link rel="alternate" type="text/html" href="https://www.davekopecek.com" />
-<updated>2025-01-26T11:04:40-05:00</updated>
-<id>https://www.davekopecek.com/</id>
+<link rel="self" type="application/atom+xml" href="http://localhost:4000/feed.xml" />
+<link rel="alternate" type="text/html" href="http://localhost:4000" />
+<updated>2025-02-09T10:38:04-05:00</updated>
+<id>http://localhost:4000/</id>
 <author>
   <name>Dave Kopecek</name>
-  <uri>https://www.davekopecek.com/</uri>
+  <uri>http://localhost:4000/</uri>
   <email>dave.kopecek@gmail.com</email>
 </author>
 
 
 <entry>
   <title type="html"><![CDATA[Bury Your Secrets and Keep Your Git History Clean]]></title>
-  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/bury-your-secrets-and-keep-your-git-history-clean/" />
-  <id>https://www.davekopecek.com/articles/bury-your-secrets-and-keep-your-git-history-clean</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/bury-your-secrets-and-keep-your-git-history-clean/" />
+  <id>http://localhost:4000/articles/bury-your-secrets-and-keep-your-git-history-clean</id>
   <published>2025-01-25T12:00:00-05:00</published>
   <updated>2025-01-25T12:00:00-05:00</updated>
   <author>
     <name>Dave Kopecek</name>
-    <uri>https://www.davekopecek.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>dave.kopecek@gmail.com</email>
   </author>
   <content type="html">
@@ -116,20 +116,20 @@ refactor: Improve database query performance
 
 &lt;p&gt;Listen up, and listen good. At the end of the day, your Git history is like your reputation on the streets—you gotta protect it at all costs. With &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git commit --amend&lt;/code&gt; for those quick fixes, interactive rebase for the deep clean, and &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;git merge --squash&lt;/code&gt; for those messy feature branches, you’ve got all the tools to make sure your indiscretions stay buried deeper than Jimmy Hoffa. Keep your commits clean, your messages meaningful, and your history straight as a razor. Because in this business, a messy Git log is like a loose cannon—it’ll only come back to haunt you. So do yourself a favor: squash those problems, bury those mistakes, and keep your repository looking like you never stepped out of line. Capisce? 🤝💼&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/bury-your-secrets-and-keep-your-git-history-clean/&quot;&gt;Bury Your Secrets and Keep Your Git History Clean&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on January 25, 2025.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/bury-your-secrets-and-keep-your-git-history-clean/&quot;&gt;Bury Your Secrets and Keep Your Git History Clean&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;http://localhost:4000&quot;&gt;DaveKopecek.com&lt;/a&gt; on January 25, 2025.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Shell Secret: (Re)Use Your Words! Repeat Yourself with the Reverse SheBang]]></title>
-  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/re-use-your-words-repeat-yourself-the-bash-command-line/" />
-  <id>https://www.davekopecek.com/re-use-your-words-repeat-yourself-the-bash-command-line</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/re-use-your-words-repeat-yourself-the-bash-command-line/" />
+  <id>http://localhost:4000/re-use-your-words-repeat-yourself-the-bash-command-line</id>
   <published>2017-03-21T17:27:13-04:00</published>
   <updated>2017-03-21T17:27:13-04:00</updated>
   <author>
     <name>Dave Kopecek</name>
-    <uri>https://www.davekopecek.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>dave.kopecek@gmail.com</email>
   </author>
   <content type="html">
@@ -158,20 +158,20 @@ $ ls
 &lt;p&gt;Hat tip to Jason for the book. It’s a quick read with a bunch of useful tips.&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/re-use-your-words-repeat-yourself-the-bash-command-line/&quot;&gt;Shell Secret: (Re)Use Your Words! Repeat Yourself with the Reverse SheBang&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on March 21, 2017.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/re-use-your-words-repeat-yourself-the-bash-command-line/&quot;&gt;Shell Secret: (Re)Use Your Words! Repeat Yourself with the Reverse SheBang&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;http://localhost:4000&quot;&gt;DaveKopecek.com&lt;/a&gt; on March 21, 2017.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Bash Your Mac Envy with Ubuntu on Windows]]></title>
-  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/bash-your-mac-envy-ubuntu-on-windows/" />
-  <id>https://www.davekopecek.com/bash-your-mac-envy-ubuntu-on-windows</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/bash-your-mac-envy-ubuntu-on-windows/" />
+  <id>http://localhost:4000/bash-your-mac-envy-ubuntu-on-windows</id>
   <published>2016-04-12T19:28:52-04:00</published>
   <updated>2016-04-12T19:28:52-04:00</updated>
   <author>
     <name>Dave Kopecek</name>
-    <uri>https://www.davekopecek.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>dave.kopecek@gmail.com</email>
   </author>
   <content type="html">
@@ -232,20 +232,20 @@ Run native Bash on Ubuntu on Windows: In this build, you can natively run Bash i
   &lt;figcaption&gt;&lt;a href=&quot;/images/docker-install-errors.jpg&quot; title=&quot;No Docker Love&quot;&gt;No Docker, But I&apos;m still loving this&lt;/a&gt;.&lt;/figcaption&gt;
 &lt;/figure&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/bash-your-mac-envy-ubuntu-on-windows/&quot;&gt;Bash Your Mac Envy with Ubuntu on Windows&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on April 12, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/bash-your-mac-envy-ubuntu-on-windows/&quot;&gt;Bash Your Mac Envy with Ubuntu on Windows&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;http://localhost:4000&quot;&gt;DaveKopecek.com&lt;/a&gt; on April 12, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Beat Bad WIFI With the Linux Screen Command]]></title>
-  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/beat-bad-wifi-with-the-linux-screen-command/" />
-  <id>https://www.davekopecek.com/beat-bad-wifi-with-the-linux-screen-command</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/beat-bad-wifi-with-the-linux-screen-command/" />
+  <id>http://localhost:4000/beat-bad-wifi-with-the-linux-screen-command</id>
   <published>2016-04-10T20:10:01-04:00</published>
   <updated>2016-04-10T20:10:01-04:00</updated>
   <author>
     <name>Dave Kopecek</name>
-    <uri>https://www.davekopecek.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>dave.kopecek@gmail.com</email>
   </author>
   <content type="html">
@@ -286,20 +286,20 @@ Run native Bash on Ubuntu on Windows: In this build, you can natively run Bash i
 &lt;p&gt;I use &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;screen&lt;/code&gt; all the time, but if you google &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;top linux commands&lt;/code&gt; it rarely makes the listicle hit parade. Is there some other command all the cool kids are using? Why? Bueller? Bueller?&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/beat-bad-wifi-with-the-linux-screen-command/&quot;&gt;Beat Bad WIFI With the Linux Screen Command&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on April 10, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/beat-bad-wifi-with-the-linux-screen-command/&quot;&gt;Beat Bad WIFI With the Linux Screen Command&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;http://localhost:4000&quot;&gt;DaveKopecek.com&lt;/a&gt; on April 10, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[CloudFlare Command Line Cache Clear]]></title>
-  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/cloudflare-command-line-cache-clear/" />
-  <id>https://www.davekopecek.com/cloudflare-command-line-cache-clear</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/cloudflare-command-line-cache-clear/" />
+  <id>http://localhost:4000/cloudflare-command-line-cache-clear</id>
   <published>2016-04-03T13:00:33-04:00</published>
   <updated>2016-04-03T13:00:33-04:00</updated>
   <author>
     <name>Dave Kopecek</name>
-    <uri>https://www.davekopecek.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>dave.kopecek@gmail.com</email>
   </author>
   <content type="html">
@@ -350,20 +350,20 @@ Run native Bash on Ubuntu on Windows: In this build, you can natively run Bash i
 
 &lt;p&gt;That’s It! Add that puppy to the end of your deployment script. Go Crazy. Not too crazy – you’re supposed to treat your API key like a password, but you get the point.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/cloudflare-command-line-cache-clear/&quot;&gt;CloudFlare Command Line Cache Clear&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on April 03, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/cloudflare-command-line-cache-clear/&quot;&gt;CloudFlare Command Line Cache Clear&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;http://localhost:4000&quot;&gt;DaveKopecek.com&lt;/a&gt; on April 03, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Things I Wish I Knew Yesterday About Jekyll on Windows]]></title>
-  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/things-i-wish-i-knew-yesterday-about-jekyll/" />
-  <id>https://www.davekopecek.com/things-i-wish-i-knew-yesterday-about-jekyll</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/things-i-wish-i-knew-yesterday-about-jekyll/" />
+  <id>http://localhost:4000/things-i-wish-i-knew-yesterday-about-jekyll</id>
   <published>2016-04-03T13:00:33-04:00</published>
   <updated>2016-04-03T13:00:33-04:00</updated>
   <author>
     <name>Dave Kopecek</name>
-    <uri>https://www.davekopecek.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>dave.kopecek@gmail.com</email>
   </author>
   <content type="html">
@@ -374,20 +374,20 @@ Run native Bash on Ubuntu on Windows: In this build, you can natively run Bash i
 
 &lt;p&gt;Take a look at my &lt;a href=&quot;https://bitbucket.org/davekopecek/davekopecek.com&quot;&gt;README&lt;/a&gt; on Bitbucket.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/things-i-wish-i-knew-yesterday-about-jekyll/&quot;&gt;Things I Wish I Knew Yesterday About Jekyll on Windows&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on April 03, 2016.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/things-i-wish-i-knew-yesterday-about-jekyll/&quot;&gt;Things I Wish I Knew Yesterday About Jekyll on Windows&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;http://localhost:4000&quot;&gt;DaveKopecek.com&lt;/a&gt; on April 03, 2016.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Resurect Dead]]></title>
-  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/resurect-dead/" />
-  <id>https://www.davekopecek.com/resurect-dead</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/resurect-dead/" />
+  <id>http://localhost:4000/resurect-dead</id>
   <published>2015-07-20T00:00:00-04:00</published>
   <updated>2015-07-20T00:00:00-04:00</updated>
   <author>
     <name>Dave Kopecek</name>
-    <uri>https://www.davekopecek.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>dave.kopecek@gmail.com</email>
   </author>
   <content type="html">
@@ -402,20 +402,20 @@ Run native Bash on Ubuntu on Windows: In this build, you can natively run Bash i
 &lt;p&gt;And so my little field of dreams is reborn. I’m looking for light weight, low overhead ways to get ideas out quickly. Lets see what we can make Jekyll do this time.  This time I care. Just a tiny bit.&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/resurect-dead/&quot;&gt;Resurect Dead&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on July 20, 2015.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/resurect-dead/&quot;&gt;Resurect Dead&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;http://localhost:4000&quot;&gt;DaveKopecek.com&lt;/a&gt; on July 20, 2015.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Where My WordPress At?]]></title>
-  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/where-my-wordpress-at/" />
-  <id>https://www.davekopecek.com/articles/where-my-wordpress-at</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/where-my-wordpress-at/" />
+  <id>http://localhost:4000/articles/where-my-wordpress-at</id>
   <published>2010-12-15T00:00:00-05:00</published>
   <updated>2010-12-15T00:00:00-05:00</updated>
   <author>
     <name>Dave Kopecek</name>
-    <uri>https://www.davekopecek.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>dave.kopecek@gmail.com</email>
   </author>
   <content type="html">
@@ -438,20 +438,20 @@ widget.net/wp-includes/version.php:&lt;span class=&quot;nv&quot;&gt;$wp_version&
 
 &lt;p&gt;For extra credit you could sort by version number, but there’s no need to be an overachiever here.  Quit while you’re ahead. The script uses &lt;em&gt;&lt;strong&gt;locate&lt;/strong&gt;&lt;/em&gt;, so make sure you run &lt;em&gt;&lt;strong&gt;updatedb&lt;/strong&gt;&lt;/em&gt; periodically.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/where-my-wordpress-at/&quot;&gt;Where My WordPress At?&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on December 15, 2010.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/where-my-wordpress-at/&quot;&gt;Where My WordPress At?&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;http://localhost:4000&quot;&gt;DaveKopecek.com&lt;/a&gt; on December 15, 2010.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Harvest - Simplified Time and Billing]]></title>
-  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/harvest-simplified-time-and-billing/" />
-  <id>https://www.davekopecek.com/articles/harvest-simplified-time-and-billing</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/harvest-simplified-time-and-billing/" />
+  <id>http://localhost:4000/articles/harvest-simplified-time-and-billing</id>
   <published>2010-11-14T00:00:00-05:00</published>
   <updated>2010-11-14T00:00:00-05:00</updated>
   <author>
     <name>Dave Kopecek</name>
-    <uri>https://www.davekopecek.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>dave.kopecek@gmail.com</email>
   </author>
   <content type="html">
@@ -472,20 +472,20 @@ widget.net/wp-includes/version.php:&lt;span class=&quot;nv&quot;&gt;$wp_version&
 
 &lt;p&gt;We both installed  Windows 7 desktop widget installed and Voila !  We’re in business &amp;amp; all set on our 30 day trial.   More as the trial progresses…&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/harvest-simplified-time-and-billing/&quot;&gt;Harvest - Simplified Time and Billing&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on November 14, 2010.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/harvest-simplified-time-and-billing/&quot;&gt;Harvest - Simplified Time and Billing&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;http://localhost:4000&quot;&gt;DaveKopecek.com&lt;/a&gt; on November 14, 2010.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Kindle for Android is a Keeper]]></title>
-  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/kindle-for-android-is-a-keeper/" />
-  <id>https://www.davekopecek.com/articles/kindle-for-android-is-a-keeper</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/kindle-for-android-is-a-keeper/" />
+  <id>http://localhost:4000/articles/kindle-for-android-is-a-keeper</id>
   <published>2010-07-29T00:00:00-04:00</published>
   <updated>2010-07-29T00:00:00-04:00</updated>
   <author>
     <name>Dave Kopecek</name>
-    <uri>https://www.davekopecek.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>dave.kopecek@gmail.com</email>
   </author>
   <content type="html">
@@ -499,39 +499,39 @@ widget.net/wp-includes/version.php:&lt;span class=&quot;nv&quot;&gt;$wp_version&
 &lt;p&gt;Ok Amazon, listen up. I see your list of &lt;a href=&quot;http://www.amazon.com/gp/feature.html?ie=UTF8&amp;amp;docId=1000517401&quot;&gt;future improvements&lt;/a&gt;.  You need to add “Share” to this list.   I want to be able to highlight some text, hit share (just like I can in LOTS of other apps) and send it via email or post it on Facebook or twitter.  If that’s in there now, I can’t find it.  If it’s not, it should be.  If you let folks send little quotes to people with a “check this out” note, YOU’LL SELL MORE BOOKS.  I promise.  Make it so. Please.&lt;/p&gt;
 
 
-    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/kindle-for-android-is-a-keeper/&quot;&gt;Kindle for Android is a Keeper&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on July 29, 2010.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/kindle-for-android-is-a-keeper/&quot;&gt;Kindle for Android is a Keeper&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;http://localhost:4000&quot;&gt;DaveKopecek.com&lt;/a&gt; on July 29, 2010.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[It's Incredibe]]></title>
-  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/its-incredible/" />
-  <id>https://www.davekopecek.com/articles/its-incredible</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/its-incredible/" />
+  <id>http://localhost:4000/articles/its-incredible</id>
   <published>2010-04-30T00:00:00-04:00</published>
   <updated>2010-04-30T00:00:00-04:00</updated>
   <author>
     <name>Dave Kopecek</name>
-    <uri>https://www.davekopecek.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>dave.kopecek@gmail.com</email>
   </author>
   <content type="html">
     &lt;p&gt;Day 2 with the HTC Incredible. This phone is amazing. I’m talking it it’s typing. I’ve logged on to my servers, updated my facebook page and even made a few calls. Still trying to find a latte app, I’m sure it out there.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/its-incredible/&quot;&gt;It&apos;s Incredibe&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on April 30, 2010.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/its-incredible/&quot;&gt;It&apos;s Incredibe&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;http://localhost:4000&quot;&gt;DaveKopecek.com&lt;/a&gt; on April 30, 2010.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Ubercart Credit Card Settings on Plesk Hosted Site - Setting up /keys]]></title>
-  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/ubercart-credit-card-settings-on-plesk-hosted-site-setting-up-keys/" />
-  <id>https://www.davekopecek.com/articles/ubercart-credit-card-settings-on-plesk-hosted-site-setting-up-keys</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/ubercart-credit-card-settings-on-plesk-hosted-site-setting-up-keys/" />
+  <id>http://localhost:4000/articles/ubercart-credit-card-settings-on-plesk-hosted-site-setting-up-keys</id>
   <published>2009-09-12T00:00:00-04:00</published>
   <updated>2009-09-12T00:00:00-04:00</updated>
   <author>
     <name>Dave Kopecek</name>
-    <uri>https://www.davekopecek.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>dave.kopecek@gmail.com</email>
   </author>
   <content type="html">
@@ -580,20 +580,20 @@ php_admin_value open_basedir &quot;/var/www/vhosts/YOUR-DOMAIN.COM/httpdocs:/tmp
 
 &lt;p&gt;Of course you can avoid all this by having Aisle8, Inc. host your Drupal, Ubercart or &lt;a title=&quot;Open Atrium&quot; href=&quot;http://openatrium.com&quot; target=&quot;_blank&quot;&gt;OpenAtrium&lt;/a&gt; site.  We can host it on a Plesk based server, or one of our trusty &lt;a href=&quot;http://groups.drupal.org/aegir-hosting-system&quot; target=&quot;_blank&quot;&gt;Aegir&lt;/a&gt; based boxes.  Aegir eases the hosting and upgrading Drupal sites —   Ain’t nothing else like it around.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/ubercart-credit-card-settings-on-plesk-hosted-site-setting-up-keys/&quot;&gt;Ubercart Credit Card Settings on Plesk Hosted Site - Setting up /keys&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on September 12, 2009.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/ubercart-credit-card-settings-on-plesk-hosted-site-setting-up-keys/&quot;&gt;Ubercart Credit Card Settings on Plesk Hosted Site - Setting up /keys&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;http://localhost:4000&quot;&gt;DaveKopecek.com&lt;/a&gt; on September 12, 2009.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Whitelisting domains in gmail]]></title>
-  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/whitelisting-domains-in-gmail/" />
-  <id>https://www.davekopecek.com/articles/whitelisting-domains-in-gmail</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/whitelisting-domains-in-gmail/" />
+  <id>http://localhost:4000/articles/whitelisting-domains-in-gmail</id>
   <published>2009-01-06T00:00:00-05:00</published>
   <updated>2009-01-06T00:00:00-05:00</updated>
   <author>
     <name>Dave Kopecek</name>
-    <uri>https://www.davekopecek.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>dave.kopecek@gmail.com</email>
   </author>
   <content type="html">
@@ -614,20 +614,20 @@ php_admin_value open_basedir &quot;/var/www/vhosts/YOUR-DOMAIN.COM/httpdocs:/tmp
 &lt;/ol&gt;
 &lt;p&gt;That wasn’t so bad. Anything sent from ‘somedomain.com’ now show up in your inbox rather than disappearing onto the great SPAM abyss.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/whitelisting-domains-in-gmail/&quot;&gt;Whitelisting domains in gmail&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on January 06, 2009.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/whitelisting-domains-in-gmail/&quot;&gt;Whitelisting domains in gmail&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;http://localhost:4000&quot;&gt;DaveKopecek.com&lt;/a&gt; on January 06, 2009.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Listing Domains Managed on a Plesk Server]]></title>
-  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/listing-domains-managed-on-a-plesk-server/" />
-  <id>https://www.davekopecek.com/articles/listing-domains-managed-on-a-plesk-server</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/listing-domains-managed-on-a-plesk-server/" />
+  <id>http://localhost:4000/articles/listing-domains-managed-on-a-plesk-server</id>
   <published>2008-12-19T00:00:00-05:00</published>
   <updated>2008-12-19T00:00:00-05:00</updated>
   <author>
     <name>Dave Kopecek</name>
-    <uri>https://www.davekopecek.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>dave.kopecek@gmail.com</email>
   </author>
   <content type="html">
@@ -650,20 +650,20 @@ php_admin_value open_basedir &quot;/var/www/vhosts/YOUR-DOMAIN.COM/httpdocs:/tmp
 
 &lt;p&gt;Nothing earth shattering here, but it might save you 5 minutes.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/listing-domains-managed-on-a-plesk-server/&quot;&gt;Listing Domains Managed on a Plesk Server&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on December 19, 2008.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/listing-domains-managed-on-a-plesk-server/&quot;&gt;Listing Domains Managed on a Plesk Server&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;http://localhost:4000&quot;&gt;DaveKopecek.com&lt;/a&gt; on December 19, 2008.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Managing Orphaned Parallels Plesk Mailboxes]]></title>
-  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/managing-orphaned-parallels-plesk-mailboxes/" />
-  <id>https://www.davekopecek.com/articles/managing-orphaned-parallels-plesk-mailboxes</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/managing-orphaned-parallels-plesk-mailboxes/" />
+  <id>http://localhost:4000/articles/managing-orphaned-parallels-plesk-mailboxes</id>
   <published>2008-09-11T00:00:00-04:00</published>
   <updated>2008-09-11T00:00:00-04:00</updated>
   <author>
     <name>Dave Kopecek</name>
-    <uri>https://www.davekopecek.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>dave.kopecek@gmail.com</email>
   </author>
   <content type="html">
@@ -730,20 +730,20 @@ php_admin_value open_basedir &quot;/var/www/vhosts/YOUR-DOMAIN.COM/httpdocs:/tmp
 
 &lt;p&gt;In your gusto to clean things out remember that there are legitimate reasons to keep a mailbox turned on for forwarded accounts, (The boss may want to be able to review mail sent to sales@ to make sure that leads are being followed up on, etc.) and some users may just get incredible amounts of mail.  With that in mind this should help you keep a lid on things.  Once you’ve got things cleaned out you may be able to use quotas to help the problem from repeating.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/managing-orphaned-parallels-plesk-mailboxes/&quot;&gt;Managing Orphaned Parallels Plesk Mailboxes&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on September 11, 2008.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/managing-orphaned-parallels-plesk-mailboxes/&quot;&gt;Managing Orphaned Parallels Plesk Mailboxes&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;http://localhost:4000&quot;&gt;DaveKopecek.com&lt;/a&gt; on September 11, 2008.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[Plain. It's the New Fancy]]></title>
-  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/plain-its-the-new-fancy/" />
-  <id>https://www.davekopecek.com/articles/plain-its-the-new-fancy</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/plain-its-the-new-fancy/" />
+  <id>http://localhost:4000/articles/plain-its-the-new-fancy</id>
   <published>2008-07-13T00:00:00-04:00</published>
   <updated>2008-07-13T00:00:00-04:00</updated>
   <author>
     <name>Dave Kopecek</name>
-    <uri>https://www.davekopecek.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>dave.kopecek@gmail.com</email>
   </author>
   <content type="html">
@@ -764,20 +764,20 @@ php_admin_value open_basedir &quot;/var/www/vhosts/YOUR-DOMAIN.COM/httpdocs:/tmp
 
 &lt;p&gt;I&apos;m sold. Simple is the way it should be.&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/plain-its-the-new-fancy/&quot;&gt;Plain. It&apos;s the New Fancy&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on July 13, 2008.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/plain-its-the-new-fancy/&quot;&gt;Plain. It&apos;s the New Fancy&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;http://localhost:4000&quot;&gt;DaveKopecek.com&lt;/a&gt; on July 13, 2008.&lt;/p&gt;
   </content>
 </entry>
 
 
 <entry>
   <title type="html"><![CDATA[99 Percent Pure and Up]]></title>
-  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/99-percent-pure-and-up/" />
-  <id>https://www.davekopecek.com/articles/99-percent-pure-and-up</id>
+  <link rel="alternate" type="text/html" href="http://localhost:4000/articles/99-percent-pure-and-up/" />
+  <id>http://localhost:4000/articles/99-percent-pure-and-up</id>
   <published>2008-07-01T00:00:00-04:00</published>
   <updated>2008-07-01T00:00:00-04:00</updated>
   <author>
     <name>Dave Kopecek</name>
-    <uri>https://www.davekopecek.com</uri>
+    <uri>http://localhost:4000</uri>
     <email>dave.kopecek@gmail.com</email>
   </author>
   <content type="html">
@@ -795,7 +795,7 @@ php_admin_value open_basedir &quot;/var/www/vhosts/YOUR-DOMAIN.COM/httpdocs:/tmp
 
 &lt;p&gt;And I’ll bet this is just the beginning…&lt;/p&gt;
 
-    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/99-percent-pure-and-up/&quot;&gt;99 Percent Pure and Up&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on July 01, 2008.&lt;/p&gt;
+    &lt;p&gt;&lt;a href=&quot;http://localhost:4000/articles/99-percent-pure-and-up/&quot;&gt;99 Percent Pure and Up&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;http://localhost:4000&quot;&gt;DaveKopecek.com&lt;/a&gt; on July 01, 2008.&lt;/p&gt;
   </content>
 </entry>
 
