@@ -175,19 +175,25 @@ convert source-image.jpg -resize 1900x500^ -gravity center -extent 1900x500 YYYY
 
 ### Deploying
 
-The site is automatically deployed via GitHub webhooks and Plesk when changes are pushed to the main branch. The `_site` directory containing the built site must be committed to the repository.
+The `rsync` remote is the canonical Git repository. The `origin` remote on GitHub is the deployment mirror, and Plesk is the live web host. Pushing the `master` branch to `origin` triggers automatic deployment through a GitHub webhook.
+
+The `_site` directory containing the production build must be committed along with the source changes.
 
 To build the site for production:
 
 ```bash
 cd site
 JEKYLL_ENV=production bundle exec jekyll build
-git add _site
-git commit -m "Update built site"
-git push
+cd ..
+git add <intended-source-files> site/_site
+git commit -m "Describe the site update"
+git push rsync master
+git push origin master
 ```
 
-> Note: Always build the site with `JEKYLL_ENV=production` to ensure correct URLs and settings.
+The push to `rsync` updates canonical storage. The push to `origin` publishes the site through GitHub and Plesk.
+
+> Note: Always build the site with `JEKYLL_ENV=production` to ensure correct URLs and settings. Review the staged changes before committing so unrelated files are not published.
 
 ### Documentation
 - [Jekyll Installation Guide](https://jekyllrb.com/docs/installation/ubuntu/)
