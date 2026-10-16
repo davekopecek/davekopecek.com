@@ -1,0 +1,12 @@
+# Local AI assistant instructions and workspace state
+AGENTS*.md
+CLAUDE*.md
+CODEX*.md
+HANDOFF.md
+.codex/
+.claude/
+.codexignore
+.claudeignore
+
+# Local JavaScript dependencies
+node_modules/
