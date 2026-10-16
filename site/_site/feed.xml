@@ -4,13 +4,118 @@
 <generator uri="https://github.com/jekyll/jekyll">Jekyll</generator>
 <link rel="self" type="application/atom+xml" href="https://www.davekopecek.com/feed.xml" />
 <link rel="alternate" type="text/html" href="https://www.davekopecek.com" />
-<updated>2025-02-09T10:45:10-05:00</updated>
+<updated>2026-10-16T11:07:37-04:00</updated>
 <id>https://www.davekopecek.com/</id>
 <author>
   <name>Dave Kopecek</name>
   <uri>https://www.davekopecek.com/</uri>
   <email>dave.kopecek@gmail.com</email>
 </author>
+
+
+<entry>
+  <title type="html"><![CDATA[I Built an MCP Server for My antsle]]></title>
+  <link rel="alternate" type="text/html" href="https://www.davekopecek.com/articles/i-built-an-mcp-server-for-my-antsle/" />
+  <id>https://www.davekopecek.com/articles/i-built-an-mcp-server-for-my-antsle</id>
+  <published>2026-10-16T09:00:00-04:00</published>
+  <updated>2026-10-16T09:00:00-04:00</updated>
+  <author>
+    <name>Dave Kopecek</name>
+    <uri>https://www.davekopecek.com</uri>
+    <email>dave.kopecek@gmail.com</email>
+  </author>
+  <content type="html">
+    &lt;p&gt;Have you ever wanted to just ask your antsle what it’s up to? I built a thing for that.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://github.com/davekopecek/antsle-mcp&quot;&gt;antsle-mcp&lt;/a&gt; is an unofficial MCP server that connects AI assistants such as Claude to antMan’s REST API. Once it’s set up, you can ask questions like:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;“Which antlets are running?”&lt;/li&gt;
+  &lt;li&gt;“Snapshot webserver before I break it.”&lt;/li&gt;
+  &lt;li&gt;“How full is my zpool?”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;MCP, or Model Context Protocol, gives an AI assistant a structured way to use tools and APIs instead of merely telling you which commands to run. In this case, it lets the assistant inspect your antsle and perform antMan operations conversationally.&lt;/p&gt;
+
+&lt;p&gt;It speaks standard MCP, so it should work with other MCP-capable assistants too. Claude Code is currently the easiest way to install it, but antsle-mcp isn’t Claude-specific.&lt;/p&gt;
+
+&lt;p&gt;To be clear, this is a personal project, not an official antsle product. Please don’t call antsle support if it misbehaves.&lt;/p&gt;
+
+&lt;h2 id=&quot;what-it-can-manage&quot;&gt;What it can manage&lt;/h2&gt;
+
+&lt;p&gt;antsle-mcp can:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;List, create, clone, start, stop, resize and delete antlets&lt;/li&gt;
+  &lt;li&gt;Create, restore and delete snapshots&lt;/li&gt;
+  &lt;li&gt;Browse and install templates&lt;/li&gt;
+  &lt;li&gt;Inspect vNICs, vDisks, vLANs, port forwards, load balancer rules and backups&lt;/li&gt;
+  &lt;li&gt;Check host status, including CPU, RAM, zpool usage and services&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;That covers the questions I tend to ask while working with an antsle without trying to turn the project into a conversational replacement for every button in antMan.&lt;/p&gt;
+
+&lt;h2 id=&quot;read-only-means-read-only&quot;&gt;Read-only means read-only&lt;/h2&gt;
+
+&lt;p&gt;The Claude Code plugin starts in read-only mode. In that mode, write tools aren’t registered at all. The assistant can inspect things, but the tempting buttons are not merely hidden behind a stern prompt. They aren’t there.&lt;/p&gt;
+
+&lt;p&gt;The server also tells the assistant to inspect before changing anything, confirm antlet names before destructive actions, offer a snapshot before risky changes, and prefer a normal stop over a force-stop.&lt;/p&gt;
+
+&lt;p&gt;Host-level operations such as shutdown, antMan and edgeLinux upgrades, and network configuration commits have no dedicated tools. Those stay with a human in the antMan UI. There is an opt-in raw API tool for endpoints without dedicated tools, but the server explicitly tells clients not to use it for those host-level operations.&lt;/p&gt;
+
+&lt;p&gt;If you install by cloning the repository or running it directly with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npx&lt;/code&gt;, set &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;ANTSLE_READ_ONLY=true&lt;/code&gt; to get the same read-only protection. Those methods are writable by default, so this is not a fine-print detail.&lt;/p&gt;
+
+&lt;h2 id=&quot;install-it-in-claude-code&quot;&gt;Install it in Claude Code&lt;/h2&gt;
+
+&lt;p&gt;You’ll need Node.js 22 or newer. Inside Claude Code, run:&lt;/p&gt;
+
+&lt;div class=&quot;language-text highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;/plugin marketplace add davekopecek/antsle-mcp
+/plugin install antsle-mcp@antsle-mcp
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;When you enable the plugin, Claude Code asks for your antsle URL, username, password and whether to use read-only mode. Read-only is on by default, and the password goes into your system’s secure credential store.&lt;/p&gt;
+
+&lt;p&gt;You can also clone the repository and use a &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;.env&lt;/code&gt; file, run it directly from GitHub with &lt;code class=&quot;language-plaintext highlighter-rouge&quot;&gt;npx&lt;/code&gt;, or connect it to another stdio MCP client such as Claude Desktop. The &lt;a href=&quot;https://github.com/davekopecek/antsle-mcp#readme&quot;&gt;README&lt;/a&gt; has the commands and configuration details.&lt;/p&gt;
+
+&lt;h2 id=&quot;things-to-ask-it&quot;&gt;Things to ask it&lt;/h2&gt;
+
+&lt;p&gt;Read-only mode is enough for plenty of useful questions:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;“Which antlets are running, and how much RAM is each one using?”&lt;/li&gt;
+  &lt;li&gt;“Give me a health check of my antsle.”&lt;/li&gt;
+  &lt;li&gt;“Show me the snapshots for my web antlet.”&lt;/li&gt;
+  &lt;li&gt;“What templates can I install?”&lt;/li&gt;
+  &lt;li&gt;“What port forwards do I have set up?”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;When you’re ready to enable writes:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;“Snapshot my web antlet before I upgrade it.”&lt;/li&gt;
+  &lt;li&gt;“Clone my test antlet so I can experiment on the copy.”&lt;/li&gt;
+  &lt;li&gt;“Bump my database antlet to 8 GB of RAM.”&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2 id=&quot;this-is-a-prerelease&quot;&gt;This is a prerelease&lt;/h2&gt;
+
+&lt;p&gt;Version 0.1.0 is a prerelease, so expect some rough edges. It has been tested against antMan 3.4.4 and was built against antMan API 1.0.0. antsle describes that API as experimental, which is another way of saying that surprises may be included at no extra charge.&lt;/p&gt;
+
+&lt;p&gt;I’d especially like to hear:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Whether it works with other antMan versions&lt;/li&gt;
+  &lt;li&gt;What’s broken, confusing or missing&lt;/li&gt;
+  &lt;li&gt;What you’d like to ask your antsle that it can’t answer yet&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;antsle-mcp is free and open source under GPL-3.0-or-later. You can find the code, installation instructions and issue tracker on &lt;a href=&quot;https://github.com/davekopecek/antsle-mcp&quot;&gt;GitHub&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Have fun, and please snapshot before you experiment. With great power comes great responsibility. Or, to quote a guy who used to work for me: &lt;strong&gt;“It works on my machine.”&lt;/strong&gt; ¯_(ツ)_/¯&lt;/p&gt;
+
+    &lt;p&gt;&lt;a href=&quot;https://www.davekopecek.com/articles/i-built-an-mcp-server-for-my-antsle/&quot;&gt;I Built an MCP Server for My antsle&lt;/a&gt; was originally published by Dave Kopecek at &lt;a href=&quot;https://www.davekopecek.com&quot;&gt;DaveKopecek.com&lt;/a&gt; on October 16, 2026.&lt;/p&gt;
+  </content>
+</entry>
 
 
 <entry>

@@ -1,0 +1,309 @@
+<!doctype html>
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<title>I Built an MCP Server for My antsle &#8211; DaveKopecek.com</title>
+<meta name="description" content="Have you ever wanted to just ask your antsle what it’s up to? I built a thing for that.
+
+">
+<meta name="keywords" content="antsle, MCP">
+
+
+<!-- Twitter Cards -->
+<meta name="twitter:title" content="I Built an MCP Server for My antsle">
+<meta name="twitter:description" content="Have you ever wanted to just ask your antsle what it’s up to? I built a thing for that.
+
+">
+<meta name="twitter:site" content="@davekopecek">
+<meta name="twitter:creator" content="@davekopecek">
+
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:image" content="https://www.davekopecek.com/images/2026-10-16-i-built-an-mcp-server-for-my-antsle-header.jpg">
+
+<!-- Open Graph -->
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:title" content="I Built an MCP Server for My antsle">
+<meta property="og:description" content="Have you ever wanted to just ask your antsle what it’s up to? I built a thing for that.
+
+">
+<meta property="og:url" content="https://www.davekopecek.com/articles/i-built-an-mcp-server-for-my-antsle/">
+<meta property="og:site_name" content="DaveKopecek.com">
+
+<meta property="og:image" content="https://www.davekopecek.com/images/2026-10-16-i-built-an-mcp-server-for-my-antsle-header.jpg">
+
+
+
+
+
+
+<link rel="canonical" href="https://www.davekopecek.com/articles/i-built-an-mcp-server-for-my-antsle/">
+<link href="https://www.davekopecek.com/feed.xml" type="application/atom+xml" rel="alternate" title="DaveKopecek.com Feed">
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<!-- For all browsers -->
+<link rel="stylesheet" href="https://www.davekopecek.com/assets/css/main.css">
+
+<meta http-equiv="cleartype" content="on">
+
+<!-- HTML5 Shiv and Media Query Support -->
+<!--[if lt IE 9]>
+	<script src="https://www.davekopecek.com/assets/js/vendor/html5shiv.min.js"></script>
+	<script src="https://www.davekopecek.com/assets/js/vendor/respond.min.js"></script>
+<![endif]-->
+
+<!-- Modernizr -->
+<script src="https://www.davekopecek.com/assets/js/vendor/modernizr-2.7.1.custom.min.js"></script>
+
+<link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700%7CPT+Serif:400,700,400italic' rel='stylesheet' type='text/css'>
+
+<!-- Icons -->
+<!-- 16x16 -->
+<link rel="shortcut icon" href="https://www.davekopecek.com/favicon.ico">
+<!-- 32x32 -->
+<link rel="shortcut icon" href="https://www.davekopecek.com/favicon.png">
+<!-- 57x57 (precomposed) for iPhone 3GS, pre-2011 iPod Touch and older Android devices -->
+<link rel="apple-touch-icon-precomposed" href="https://www.davekopecek.com/images/apple-touch-icon-precomposed.png">
+<!-- 72x72 (precomposed) for 1st generation iPad, iPad 2 and iPad mini -->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="https://www.davekopecek.com/images/apple-touch-icon-72x72-precomposed.png">
+<!-- 114x114 (precomposed) for iPhone 4, 4S, 5 and post-2011 iPod Touch -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="https://www.davekopecek.com/images/apple-touch-icon-114x114-precomposed.png">
+<!-- 144x144 (precomposed) for iPad 3rd and 4th generation -->
+<link rel="apple-touch-icon-precomposed" sizes="144x144" href="https://www.davekopecek.com/images/apple-touch-icon-144x144-precomposed.png">
+
+</head>
+
+<body class="post">
+
+<!--[if lt IE 9]><div class="browser-upgrade alert alert-info">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</div><![endif]-->
+
+<div class="navigation-wrapper">
+	<div class="site-name">
+		<a href="https://www.davekopecek.com/">DaveKopecek.com</a>
+	</div><!-- /.site-name -->
+	<div class="top-navigation">
+		<nav id="site-nav" class="nav">
+		    <ul>
+		        
+				    
+				    <li><a href="https://www.davekopecek.com/about/" >About</a></li>
+				
+				    
+				    <li><a href="https://www.davekopecek.com/posts/" >Posts</a></li>
+				
+				    
+				    <li><a href="http://aisle8.net" target="_blank">Aisle8</a></li>
+				
+		    </ul>
+		</nav>
+	</div><!-- /.top-navigation -->
+</div><!-- /.navigation-wrapper -->
+
+
+
+  <div class="image-wrap">
+  <img src=
+    
+      "https://www.davekopecek.com/images/2026-10-16-i-built-an-mcp-server-for-my-antsle-header.jpg"
+    
+  alt="An MCP connection between a terminal asking which antlets are running and a red antsle server">
+  
+  </div><!-- /.image-wrap -->
+
+
+<div id="main" role="main">
+  <div class="article-author-side">
+    
+
+<div itemscope itemtype="http://schema.org/Person">
+
+
+	<img src="https://www.davekopecek.com/images/dave-kopecek.jpg" class="bio-photo" alt="Dave Kopecek bio photo">
+
+
+  <h3 itemprop="name">Dave Kopecek</h3>
+  <p>The Blog That Time Forgot.</p>
+  <a href="mailto:dave.kopecek@gmail.com" class="author-social" target="_blank"><i class="fa fa-fw fa-envelope-square"></i> Email</a>
+  <a href="http://twitter.com/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-twitter-square"></i> Twitter</a>
+  
+  
+  <a href="http://linkedin.com/in/dave-kopecek-054b4618" class="author-social" target="_blank"><i class="fa fa-fw fa-linkedin-square"></i> LinkedIn</a>
+  
+  
+  
+  
+  <a href="http://github.com/davekopecek" class="author-social" target="_blank"><i class="fa fa-fw fa-github"></i> Github</a>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+  </div>
+  <article class="post">
+    <div class="headline-wrap">
+      
+        <h1><a href="https://www.davekopecek.com/articles/i-built-an-mcp-server-for-my-antsle/" rel="bookmark" title="I Built an MCP Server for My antsle">I Built an MCP Server for My antsle</a></h1>
+      
+    </div><!--/ .headline-wrap -->
+    <div class="article-wrap">
+      <p>Have you ever wanted to just ask your antsle what it’s up to? I built a thing for that.</p>
+
+<p><a href="https://github.com/davekopecek/antsle-mcp">antsle-mcp</a> is an unofficial MCP server that connects AI assistants such as Claude to antMan’s REST API. Once it’s set up, you can ask questions like:</p>
+
+<ul>
+  <li>“Which antlets are running?”</li>
+  <li>“Snapshot webserver before I break it.”</li>
+  <li>“How full is my zpool?”</li>
+</ul>
+
+<p>MCP, or Model Context Protocol, gives an AI assistant a structured way to use tools and APIs instead of merely telling you which commands to run. In this case, it lets the assistant inspect your antsle and perform antMan operations conversationally.</p>
+
+<p>It speaks standard MCP, so it should work with other MCP-capable assistants too. Claude Code is currently the easiest way to install it, but antsle-mcp isn’t Claude-specific.</p>
+
+<p>To be clear, this is a personal project, not an official antsle product. Please don’t call antsle support if it misbehaves.</p>
+
+<h2 id="what-it-can-manage">What it can manage</h2>
+
+<p>antsle-mcp can:</p>
+
+<ul>
+  <li>List, create, clone, start, stop, resize and delete antlets</li>
+  <li>Create, restore and delete snapshots</li>
+  <li>Browse and install templates</li>
+  <li>Inspect vNICs, vDisks, vLANs, port forwards, load balancer rules and backups</li>
+  <li>Check host status, including CPU, RAM, zpool usage and services</li>
+</ul>
+
+<p>That covers the questions I tend to ask while working with an antsle without trying to turn the project into a conversational replacement for every button in antMan.</p>
+
+<h2 id="read-only-means-read-only">Read-only means read-only</h2>
+
+<p>The Claude Code plugin starts in read-only mode. In that mode, write tools aren’t registered at all. The assistant can inspect things, but the tempting buttons are not merely hidden behind a stern prompt. They aren’t there.</p>
+
+<p>The server also tells the assistant to inspect before changing anything, confirm antlet names before destructive actions, offer a snapshot before risky changes, and prefer a normal stop over a force-stop.</p>
+
+<p>Host-level operations such as shutdown, antMan and edgeLinux upgrades, and network configuration commits have no dedicated tools. Those stay with a human in the antMan UI. There is an opt-in raw API tool for endpoints without dedicated tools, but the server explicitly tells clients not to use it for those host-level operations.</p>
+
+<p>If you install by cloning the repository or running it directly with <code class="language-plaintext highlighter-rouge">npx</code>, set <code class="language-plaintext highlighter-rouge">ANTSLE_READ_ONLY=true</code> to get the same read-only protection. Those methods are writable by default, so this is not a fine-print detail.</p>
+
+<h2 id="install-it-in-claude-code">Install it in Claude Code</h2>
+
+<p>You’ll need Node.js 22 or newer. Inside Claude Code, run:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/plugin marketplace add davekopecek/antsle-mcp
+/plugin install antsle-mcp@antsle-mcp
+</code></pre></div></div>
+
+<p>When you enable the plugin, Claude Code asks for your antsle URL, username, password and whether to use read-only mode. Read-only is on by default, and the password goes into your system’s secure credential store.</p>
+
+<p>You can also clone the repository and use a <code class="language-plaintext highlighter-rouge">.env</code> file, run it directly from GitHub with <code class="language-plaintext highlighter-rouge">npx</code>, or connect it to another stdio MCP client such as Claude Desktop. The <a href="https://github.com/davekopecek/antsle-mcp#readme">README</a> has the commands and configuration details.</p>
+
+<h2 id="things-to-ask-it">Things to ask it</h2>
+
+<p>Read-only mode is enough for plenty of useful questions:</p>
+
+<ul>
+  <li>“Which antlets are running, and how much RAM is each one using?”</li>
+  <li>“Give me a health check of my antsle.”</li>
+  <li>“Show me the snapshots for my web antlet.”</li>
+  <li>“What templates can I install?”</li>
+  <li>“What port forwards do I have set up?”</li>
+</ul>
+
+<p>When you’re ready to enable writes:</p>
+
+<ul>
+  <li>“Snapshot my web antlet before I upgrade it.”</li>
+  <li>“Clone my test antlet so I can experiment on the copy.”</li>
+  <li>“Bump my database antlet to 8 GB of RAM.”</li>
+</ul>
+
+<h2 id="this-is-a-prerelease">This is a prerelease</h2>
+
+<p>Version 0.1.0 is a prerelease, so expect some rough edges. It has been tested against antMan 3.4.4 and was built against antMan API 1.0.0. antsle describes that API as experimental, which is another way of saying that surprises may be included at no extra charge.</p>
+
+<p>I’d especially like to hear:</p>
+
+<ul>
+  <li>Whether it works with other antMan versions</li>
+  <li>What’s broken, confusing or missing</li>
+  <li>What you’d like to ask your antsle that it can’t answer yet</li>
+</ul>
+
+<p>antsle-mcp is free and open source under GPL-3.0-or-later. You can find the code, installation instructions and issue tracker on <a href="https://github.com/davekopecek/antsle-mcp">GitHub</a>.</p>
+
+<p>Have fun, and please snapshot before you experiment. With great power comes great responsibility. Or, to quote a guy who used to work for me: <strong>“It works on my machine.”</strong> ¯_(ツ)_/¯</p>
+
+      <hr />
+      <footer role="contentinfo">
+        <p class="byline"><strong>I Built an MCP Server for My antsle</strong> was published on <time datetime="2026-10-16T09:00:00-04:00">October 16, 2026</time>.</p>
+      </footer>
+    </div><!-- /.article-wrap -->
+  
+  </article>
+</div><!-- /#main -->
+
+<div class="footer-wrap">
+  
+  <div class="related-articles">
+  <h4>You might also enjoy <small class="pull-right">(<a href="https://www.davekopecek.com/posts/">View all posts</a>)</small></h4>
+    <ul>
+    
+      <li><a href="https://www.davekopecek.com/articles/bury-your-secrets-and-keep-your-git-history-clean/" title="Bury Your Secrets and Keep Your Git History Clean">Bury Your Secrets and Keep Your Git History Clean</a></li>
+    
+      <li><a href="https://www.davekopecek.com/re-use-your-words-repeat-yourself-the-bash-command-line/" title="Shell Secret: (Re)Use Your Words! Repeat Yourself with the Reverse SheBang">Shell Secret: (Re)Use Your Words! Repeat Yourself with the Reverse SheBang</a></li>
+    
+      <li><a href="https://www.davekopecek.com/bash-your-mac-envy-ubuntu-on-windows/" title="Bash Your Mac Envy with Ubuntu on Windows">Bash Your Mac Envy with Ubuntu on Windows</a></li>
+    
+    </ul>
+    <hr />
+  </div><!-- /.related-articles -->
+  
+  <footer>
+    
+
+<span>&copy; 2026 Dave Kopecek. Powered by <a href="http://jekyllrb.com" rel="nofollow">Jekyll</a> using the <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" rel="nofollow">Minimal Mistakes</a> theme. <a href="/cheat-sheet">Bonus: Cheat Sheet</a></span>
+
+  </footer>
+</div><!-- /.footer-wrap -->
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="https://www.davekopecek.com/assets/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+<script src="https://www.davekopecek.com/assets/js/scripts.min.js"></script>
+
+<!-- Asynchronous Google Analytics snippet -->
+<script>
+  var _gaq = _gaq || [];
+  var pluginUrl =
+ '//www.google-analytics.com/plugins/ga/inpage_linkid.js';
+  _gaq.push(['_require', 'inpage_linkid', pluginUrl]);
+  _gaq.push(['_setAccount', 'UA-15854484-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+
+
+
+
+</body>
+</html>
