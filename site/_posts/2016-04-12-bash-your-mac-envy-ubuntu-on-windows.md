@@ -8,6 +8,7 @@ comments: true
 tags: [Bash, Ubuntu on Windows]
 image:
   feature: ubuntu-on-windows-10.jpg
+  alt: "White origami unicorn with a blue mane and tail"
   credit: yosuke muroya
   creditlink: https://www.flickr.com/photos/hamur0w0/
 date: 2016-04-12T19:28:52-04:00

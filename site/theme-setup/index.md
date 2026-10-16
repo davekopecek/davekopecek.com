@@ -5,6 +5,7 @@ modified: 2016-01-19
 excerpt: "Instructions on how to install and customize the Jekyll theme Minimal Mistakes."
 image:
   feature: sample-image-3.jpg
+  alt: "Soft-focus abstract background in pink and purple"
   credit: WeGraphics
   creditlink: http://wegraphics.net/downloads/free-ultimate-blurred-background-pack/
 ---
@@ -206,6 +207,7 @@ The post and page layouts make the assumption that the feature images live in th
 {% highlight yaml %}
 image:
   feature: feature-image-filename.jpg
+  alt: A concise description of the feature image
   thumb: thumbnail-image.jpg #keep it square 200x200 px is good
 {% endhighlight %}
 
@@ -214,6 +216,7 @@ To add attribution to a feature image use the following YAML front matter on pos
 {% highlight yaml %}
 image:
   feature: feature-image-filename.jpg
+  alt: A concise description of the feature image
   credit: Michael Rose #name of the person or site you want to credit
   creditlink: http://mademistakes.com #url to their site or licensing
 {% endhighlight %}

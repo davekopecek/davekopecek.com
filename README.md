@@ -111,6 +111,7 @@ category: articles
 tags: []
 image:
   feature: YYYY-MM-DD-post-title-header.jpg
+  alt: "A concise description of the header image"
 ---
 ```
 
@@ -163,6 +164,7 @@ category: articles
 tags: []
 image:
   feature: YYYY-MM-DD-post-title-header.jpg
+  alt: "A concise description of the header image"
 ---
 ```
 

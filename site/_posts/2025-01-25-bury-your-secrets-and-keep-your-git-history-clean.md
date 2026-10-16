@@ -7,6 +7,7 @@ category: articles
 tags: [git]
 image:
   feature: 2025-01-25-bury-your-secrets-and-keep-your-git-history-clean.jpg
+  alt: "Two mobsters with shovels beside a vintage car, with the Manhattan skyline in the distance"
 ---
 
 I know. Git is hard. But do you know what else makes life hard? Looking like some stupid jamook. In this business, it pays to keep things tight—loose ends get you whacked. Every half-baked commit, every "fix typo" message, it's all evidence that you were sloppy on the job. And trust me, you don't want your crew—or worse, the boss—digging through your Git history like it's the FBI cracking open old case files.

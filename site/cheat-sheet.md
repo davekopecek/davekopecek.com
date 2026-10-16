@@ -7,6 +7,7 @@ excerpt: Because Syntax. Someday I will learn markdown.
 tags: [markdown]
 image:
   feature: cheat-sheet.jpg
+  alt: "Handwritten chemistry formulas and notes arranged in boxes"
   credit: Amy
   creditlink: https://www.flickr.com/photos/amylovesyah/
 ---

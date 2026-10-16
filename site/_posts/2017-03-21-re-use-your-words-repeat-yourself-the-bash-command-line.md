@@ -8,6 +8,7 @@ tags: [Bash]
 comments: true
 image:
   feature: reverse-shebang.jpg
+  alt: "The Bash history modifier !#:n in black lettering on a green background"
   credit: Gimp & Neon Glow
 date: 2017-03-21T17:27:13-04:00
 ---

@@ -6,6 +6,7 @@ tags: [sample post, readability, test]
 comments: true
 image:
   feature: toynbee.jpg
+  alt: "Toynbee tile embedded in asphalt reading: Toynbee Idea in Kubrick's 2001 Resurrect Dead on Planet Jupiter"
 ---
 
 For years I've tried to impress upon clients my *reverse field of dreams&trade;* theory of site deployment. Everyone views their site launch with great excitement, but really:

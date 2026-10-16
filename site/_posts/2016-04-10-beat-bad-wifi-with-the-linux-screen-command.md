@@ -8,6 +8,7 @@ comments: true
 tags: [Linux Screen]
 image:
   feature: wifi.jpg
+  alt: "The word WIFI painted in white on a weathered wooden panel"
   credit: Marcus Linder
   creditlink: https://www.flickr.com/photos/linder/
 date: 2016-04-10T20:10:01-04:00
