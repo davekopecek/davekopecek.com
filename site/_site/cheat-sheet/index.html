@@ -152,7 +152,7 @@
   <article class="page">
     <h1>Cheat Sheet</h1>
     <div class="article-wrap">
-      <p>##Mashup of my favorite Minimal Mistakes sample pages</p>
+      <h2 id="mashup-of-my-favorite-minimal-mistakes-sample-pages">Mashup of my favorite Minimal Mistakes sample pages</h2>
 
 <p>Because Syntax. Someday I will learn markdown.</p>
 
@@ -162,11 +162,14 @@
   </header>
 <div id="drawer">
 <ul id="markdown-toc">
-  <li><a href="#code-hilighting-post" id="markdown-toc-code-hilighting-post">Code Hilighting Post</a></li>
-  <li><a href="#highlighted-code-blocks" id="markdown-toc-highlighted-code-blocks">Highlighted Code Blocks</a></li>
-  <li><a href="#standard-code-block" id="markdown-toc-standard-code-block">Standard Code Block</a></li>
-  <li><a href="#fenced-code-blocks" id="markdown-toc-fenced-code-blocks">Fenced Code Blocks</a></li>
-  <li><a href="#github-gist-embed" id="markdown-toc-github-gist-embed">GitHub Gist Embed</a></li>
+  <li><a href="#mashup-of-my-favorite-minimal-mistakes-sample-pages" id="markdown-toc-mashup-of-my-favorite-minimal-mistakes-sample-pages">Mashup of my favorite Minimal Mistakes sample pages</a>    <ul>
+      <li><a href="#code-hilighting-post" id="markdown-toc-code-hilighting-post">Code Hilighting Post</a></li>
+      <li><a href="#highlighted-code-blocks" id="markdown-toc-highlighted-code-blocks">Highlighted Code Blocks</a></li>
+      <li><a href="#standard-code-block" id="markdown-toc-standard-code-block">Standard Code Block</a></li>
+      <li><a href="#fenced-code-blocks" id="markdown-toc-fenced-code-blocks">Fenced Code Blocks</a></li>
+      <li><a href="#github-gist-embed" id="markdown-toc-github-gist-embed">GitHub Gist Embed</a></li>
+    </ul>
+  </li>
   <li><a href="#sample-post" id="markdown-toc-sample-post">Sample Post</a></li>
   <li><a href="#html-elements" id="markdown-toc-html-elements">HTML Elements</a></li>
   <li><a href="#heading-1" id="markdown-toc-heading-1">Heading 1</a>    <ul>
@@ -308,8 +311,14 @@
 
 <p>An example of a Gist embed below.</p>
 
-<noscript><pre>404: Not Found</pre></noscript>
-<script src="https://gist.github.com/mmistakes/6589546.js"> </script>
+<noscript><pre>#!/usr/bin/env bash
+# How long since the last post? Usage: ./last-post.sh path/to/_posts
+last=$(ls &quot;${1:-_posts}&quot; | sort | tail -1 | cut -c1-10)
+days=$(( ( $(date +%s) - $(date -d &quot;$last&quot; +%s) ) / 86400 ))
+echo &quot;Last post: $last. That&#39;s $days days ago.&quot;
+(( days &gt; 365 )) &amp;&amp; echo &quot;Status: The Blog That Time Forgot.&quot; || echo &quot;Status: Suspiciously active.&quot;
+</pre></noscript>
+<script src="https://gist.github.com/davekopecek/82ffa94ea859ddd874d09ee9dbd083b9.js"> </script>
 
 <h2 id="sample-post">Sample Post</h2>
 
@@ -463,8 +472,8 @@
 <p>And you’ll get something that looks like this:</p>
 
 <figure class="half">
-  <a href="http://placehold.it/1200x600.JPG"><img src="http://placehold.it/600x300.jpg" /></a>
-  <a href="http://placehold.it/1200x600.jpeg"><img src="http://placehold.it/600x300.jpg" /></a>
+  <a href="https://placehold.co/1200x600"><img src="https://placehold.co/600x300" /></a>
+  <a href="https://placehold.co/1200x600"><img src="https://placehold.co/600x300" /></a>
   <figcaption>Two images.</figcaption>
 </figure>
 
@@ -482,9 +491,9 @@
 <p>And you’ll get something that looks like this:</p>
 
 <figure class="third">
-  <img src="http://placehold.it/600x300.jpg" />
-  <img src="http://placehold.it/600x300.jpg" />
-  <img src="http://placehold.it/600x300.jpg" />
+  <img src="https://placehold.co/600x300" />
+  <img src="https://placehold.co/600x300" />
+  <img src="https://placehold.co/600x300" />
   <figcaption>Three images.</figcaption>
 </figure>
 
@@ -496,23 +505,6 @@
   </ol>
 </div>
 
-      
-        <hr />
-        <div class="social-share">
-  <h4>Share on</h4>
-  <ul>
-    <li>
-      <a href="https://twitter.com/intent/tweet?text=https://www.davekopecek.com/cheat-sheet/" class="twitter" title="Share on Twitter"><i class="fa fa-twitter"></i><span> Twitter</span></a>
-    </li>
-    <li>
-      <a href="https://www.facebook.com/sharer/sharer.php?u=https://www.davekopecek.com/cheat-sheet/" class="facebook" title="Share on Facebook"><i class="fa fa-facebook"></i><span> Facebook</span></a>
-    </li>
-    <li>
-      <a href="https://plus.google.com/share?url=https://www.davekopecek.com/cheat-sheet/" class="google-plus" title="Share on Google Plus"><i class="fa fa-google-plus"></i><span> Google+</span></a>
-    </li>
-  </ul>
-</div><!-- /.social-share -->
-      
     </div><!-- /.article-wrap -->
     
   </article>

@@ -12,7 +12,7 @@ image:
   creditlink: https://www.flickr.com/photos/amylovesyah/
 ---
 
-##Mashup of my favorite Minimal Mistakes sample pages
+## Mashup of my favorite Minimal Mistakes sample pages
 
 Because Syntax. Someday I will learn markdown.
 
@@ -139,7 +139,7 @@ end
 
 An example of a Gist embed below.
 
-{% gist mmistakes/6589546 %}
+{% gist davekopecek/82ffa94ea859ddd874d09ee9dbd083b9 %}
 
 ## Sample Post
 
@@ -262,8 +262,8 @@ Apply the `half` class like so to display two images side by side that share the
 And you'll get something that looks like this:
 
 <figure class="half">
-  <a href="http://placehold.it/1200x600.JPG"><img src="http://placehold.it/600x300.jpg"></a>
-  <a href="http://placehold.it/1200x600.jpeg"><img src="http://placehold.it/600x300.jpg"></a>
+  <a href="https://placehold.co/1200x600"><img src="https://placehold.co/600x300"></a>
+  <a href="https://placehold.co/1200x600"><img src="https://placehold.co/600x300"></a>
   <figcaption>Two images.</figcaption>
 </figure>
 
@@ -283,9 +283,9 @@ Apply the `third` class like so to display three images side by side that share 
 And you'll get something that looks like this:
 
 <figure class="third">
-  <img src="http://placehold.it/600x300.jpg">
-  <img src="http://placehold.it/600x300.jpg">
-  <img src="http://placehold.it/600x300.jpg">
+  <img src="https://placehold.co/600x300">
+  <img src="https://placehold.co/600x300">
+  <img src="https://placehold.co/600x300">
   <figcaption>Three images.</figcaption>
 </figure>
 
