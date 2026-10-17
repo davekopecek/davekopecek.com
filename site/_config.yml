@@ -48,7 +48,6 @@ owner:
   disqus-shortname: davekopecek
   twitter:  davekopecek
   google:
-    plus: #username
     analytics: UA-15854484-1
     verify:
     ad-client:
@@ -57,13 +56,12 @@ owner:
   github:   davekopecek
   linkedin: david-kopecek-054b4618
   xing: #username
-  lastfm: #username
   tumblr: #username
   foursquare: #username
   steam: #username
   dribbble: #username
   youtube: #username
-  soundcloud: #username
+  soundcloud: stumpdevil
   weibo: #username
   flickr: #username
   codepen: #username
