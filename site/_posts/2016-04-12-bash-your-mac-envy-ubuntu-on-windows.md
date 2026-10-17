@@ -34,18 +34,18 @@ Game On! I had enrolled in [Microsoft's Insider Program](https://insider.windows
 
 <figure>
   <a href="/images/bash-1.jpg"><img src="/images/bash-1.jpg"></a>
-  <figcaption><a href="bash-1.jpg" title="Entered `bash` from CMD prompt to install">Entered 'bash' from CMD prompt to install</a>.</figcaption>
+  <figcaption><a href="/images/bash-1.jpg" title="Entered `bash` from CMD prompt to install">Entered 'bash' from CMD prompt to install</a>.</figcaption>
 </figure>
 
 <figure>
   <a href="/images/bash-2-git-install.jpg"><img src="/images/bash-2-git-install.jpg"></a>
-  <figcaption><a href="bash-2-git-install.jpg" title="Packages!! Ima Git me some">Packages!! Ima Git me some</a>.</figcaption>
+  <figcaption><a href="/images/bash-2-git-install.jpg" title="Packages!! Ima Git me some">Packages!! Ima Git me some</a>.</figcaption>
 </figure>
 
 ## Better than Lickable Wallpaper
 <figure>
-  <a href="http://45.media.tumblr.com/34ad7e4990a285be2019330be88171c6/tumblr_mtjrtyUJ1E1s0teago4_400.gif"><img src="http://45.media.tumblr.com/34ad7e4990a285be2019330be88171c6/tumblr_mtjrtyUJ1E1s0teago4_400.gif"></a>
-  <figcaption><a href="http://45.media.tumblr.com/34ad7e4990a285be2019330be88171c6/tumblr_mtjrtyUJ1E1s0teago4_400.gif" title="Listen to the man."></a>.</figcaption>
+  <a href="/images/listen-to-the-man.gif"><img src="/images/listen-to-the-man.gif"></a>
+  <figcaption><a href="/images/listen-to-the-man.gif" title="Listen to the man."></a>.</figcaption>
 </figure>
 
 <figure>
